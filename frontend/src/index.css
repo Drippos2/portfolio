@@ -4,12 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Pridaná oprava pre centrovanie a zamedzenie pretekania na mobile */
 * {
     scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
 
 body {
-    margin: 0;
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
         "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
         "Helvetica Neue", sans-serif;
