@@ -104,7 +104,7 @@ export const translations = {
       perPiece: 'za 1ks',
       basic: {
         title: 'Základná webová stránka',
-        price: '100 €',
+        price: '150 €',
         features: [
           'Moderný, elegantný dizajn',
           'Základné funkcie',
@@ -116,7 +116,7 @@ export const translations = {
       },
       advanced: {
         title: 'Pokročilá webová stránka',
-        price: '250 €',
+        price: '300 €',
         features: [
           'Všetko zo základnej verzie',
           'Animácie textov',
@@ -144,7 +144,7 @@ export const translations = {
       },
       video: {
         title: 'Video Editing',
-        price: '20 €',
+        price: '10 €',
         period: 'za video',
         features: [
           'Profesionálny strih',
@@ -193,7 +193,7 @@ export const translations = {
     },
     hero: {
       title: 'Web Dizajn & Digitální řešení',
-      subtitle: 'Tvořím moderní a profesionální webové stránky, které pomáhají firmám růst a budovat silnou online prezentaci.',
+      subtitle: 'Tvoříme moderní a profesionální webové stránky, které pomáhají firmám růst a budovat silnou online prezentaci.',
       viewProjects: 'Zobrazit projekty',
       contact: 'Kontaktovat mě'
     },
@@ -281,7 +281,7 @@ export const translations = {
       perVideo: 'za video',
       basic: {
         title: 'Základní webová stránka',
-        price: '30 €',
+        price: '150 €',
         features: [
           'Moderní, elegantní design',
           'Základní funkce',
@@ -293,7 +293,7 @@ export const translations = {
       },
       advanced: {
         title: 'Pokročilá webová stránka',
-        price: '60 €',
+        price: '300 €',
         features: [
           'Vše ze základní verze',
           'Animace textů',
@@ -306,7 +306,7 @@ export const translations = {
       },
       social: {
         title: 'Správa sociálních sítí',
-        price: '25 €',
+        price: '50 €',
         period: 'měsíčně',
         features: [
           'Pravidelné příspěvky',
@@ -317,7 +317,7 @@ export const translations = {
       },
       video: {
         title: 'Video Editing',
-        price: '15 €',
+        price: '10 €',
         period: 'za video',
         features: [
           'Profesionální střih',
@@ -325,8 +325,20 @@ export const translations = {
           'Titulky a animace',
           'Export v HD kvalitě'
         ]
+      },
+      logo: {
+        title: 'Tvorba logov a bannerov',
+        price: '30 €',
+        period: 'za 1ks',
+        features: [
+          'Originálny dizajn loga',
+          'Rôzne verzie (farebné, čiernobiele)',
+          'Bannery pre sociálne siete',
+          'Súbory vo vysokom rozlíšení'
+        ]
       }
     },
+    
     contact: {
       title: 'Kontakt',
       description: 'Máte projekt? Kontaktujte mě a začněme spolupracovat!',
@@ -443,7 +455,7 @@ export const translations = {
       perVideo: 'per video',
       basic: {
         title: 'Basic Website',
-        price: '€30',
+        price: '€150',
         features: [
           'Modern, elegant design',
           'Basic features',
@@ -455,7 +467,7 @@ export const translations = {
       },
       advanced: {
         title: 'Advanced Website',
-        price: '€60',
+        price: '€300',
         features: [
           'Everything from basic version',
           'Text animations',
@@ -468,7 +480,7 @@ export const translations = {
       },
       social: {
         title: 'Social Media Management',
-        price: '€25',
+        price: '€50',
         period: 'monthly',
         features: [
           'Regular posts',
@@ -479,13 +491,24 @@ export const translations = {
       },
       video: {
         title: 'Video Editing',
-        price: '€15',
+        price: '€10',
         period: 'per video',
         features: [
           'Professional editing',
           'Color correction',
           'Subtitles and animations',
           'HD quality export'
+        ]
+      },
+      logo: {
+        title: 'Logo and banner design',
+        price: '30 €',
+        period: 'za 1ks',
+        features: [
+          'Original logo design',
+          'Various versions (color, black and white)',
+          'Social media banners',
+          'High-resolution files'
         ]
       }
     },
