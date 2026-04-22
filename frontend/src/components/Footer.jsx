@@ -37,7 +37,7 @@ const Footer = ({ translations }) => {
             </div>
           </div>
 
-          {/* Contact Info */}
+        {/* Contact Info */}
           <div>
             <h3 className="text-white font-bold mb-4">{translations.contact.info}</h3>
             <div className="flex flex-col gap-3">
@@ -57,6 +57,11 @@ const Footer = ({ translations }) => {
                 <Instagram size={16} />
                 @duovisionstudiosk
               </a>
+              {/* PRIDANÉ IČO */}
+              <div className="flex items-center gap-2 text-gray-400 text-sm cursor-default">
+                <span className="text-teal-400 font-bold text-[10px]">IČO</span>
+                IČO: 57587752
+              </div>
             </div>
           </div>
         </div>
