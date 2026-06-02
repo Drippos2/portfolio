@@ -104,7 +104,7 @@ export const translations = {
       perPiece: 'za 1ks',
       basic: {
         title: 'Základná webová stránka',
-        price: '150 €',
+        price: '200 €',
         features: [
           'Moderný, elegantný dizajn',
           'Základné funkcie',
@@ -116,7 +116,7 @@ export const translations = {
       },
       advanced: {
         title: 'Pokročilá webová stránka',
-        price: '300 €',
+        price: 'od 450 €',
         features: [
           'Všetko zo základnej verzie',
           'Animácie textov',
@@ -132,7 +132,7 @@ export const translations = {
       },
         social: {
         title: 'Správa sociálnych sietí',
-        price: '50 €',
+        price: '100 €',
         period: 'mesačne',
         features: [
           '3 príspevky týždenne (Feed/Reels)', // KONKRÉTNY POČET
