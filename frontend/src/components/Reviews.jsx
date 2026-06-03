@@ -8,7 +8,7 @@ const Reviews = () => {
   const [message, setMessage] = useState('');
 
   // Používame relatívnu cestu /api, ktorá funguje na duovision.sk
-  const API_URL = '/api/reviews';
+const API_URL = 'https://portfolio-w7re.onrender.com/api/reviews';
 
   const fetchReviews = async () => {
     try {
