@@ -31,7 +31,7 @@ function App() {
       <About translations={currentTranslations} />
       <Services translations={currentTranslations} />
       <ProjectsCarousel translations={currentTranslations} />
-      <Reviews translations={currentTranslations} />
+      <Reviews/>
       <Skills translations={currentTranslations} />
       <WhyMe translations={currentTranslations} />
       <Pricing translations={currentTranslations} />

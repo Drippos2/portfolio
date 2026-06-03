@@ -47,6 +47,12 @@ const ProjectsCarousel = ({ translations }) => {
       description: translations.projects.kastelan.description,
       image: '/kastelan-preview.jpg',
       link: 'https://kastelan.vercel.app'
+    },
+            {
+      title: translations.projects.penzionstrba.title,
+      description: translations.projects.penzionstrba.description,
+      image: '/penzion-strba-preview.jpg',
+      link: 'https://www.penzion-strba.sk/'
     }
   ];
 

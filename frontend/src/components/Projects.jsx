@@ -11,7 +11,8 @@ const Projects = ({ translations }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          [0, 1].forEach((index) => {
+          // Upravené na [0, 1, 2], aby sa zobrazili všetky 3 projekty
+          [0, 1, 2].forEach((index) => {
             setTimeout(() => {
               setVisibleProjects((prev) => [...prev, index]);
             }, index * 300);
@@ -44,6 +45,12 @@ const Projects = ({ translations }) => {
       description: translations.projects.boccacio.description,
       image: '/boccacio-preview.jpg',
       link: 'https://boccacio.vercel.app'
+    },
+        {
+      title: translations.projects.penzionstrba.title,
+      description: translations.projects.penzionstrba.description,
+      image: '/penzion-strba-preview.jpg',
+      link: 'https://www.penzion-strba.sk/'
     }
   ];
 

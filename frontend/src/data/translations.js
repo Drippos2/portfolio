@@ -52,6 +52,10 @@ export const translations = {
       kastelan: {
         title: 'Penzión Kastelan',
         description: 'Luxusný penzión v historických Bojniciach.'
+      },
+       penzionstrba: {
+        title: 'Penzión Štrba',
+        description: 'Viac než len ubytovanie, je to tatranský zážitok.'
       }
     },
     reviews: {
