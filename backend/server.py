@@ -11,22 +11,41 @@ from datetime import datetime, timezone
 from contextlib import asynccontextmanager
 import uuid
 
+# Konfigurácia logovania
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 # --- KONFIGURÁCIA ---
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-# --- DB LIFE-CYCLE (Moderný spôsob) ---
+# --- DB LIFE-CYCLE ---
+client = None
+db = None
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup
     global client, db
-    client = AsyncIOMotorClient(os.environ['MONGO_URL'])
-    db = client[os.environ['DB_NAME']]
+    mongo_url = os.environ.get('MONGO_URL')
+    db_name = os.environ.get('DB_NAME')
+    
+    logger.info(f"Pripájam sa k databáze: {db_name}")
+    client = AsyncIOMotorClient(mongo_url)
+    db = client[db_name]
     yield
-    # Shutdown
     client.close()
 
 app = FastAPI(lifespan=lifespan)
+
+# --- CORS MIDDLEWARE (Najdôležitejšia časť) ---
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # Toto povoľuje všetko, musí to fungovať
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 api_router = APIRouter(prefix="/api")
 
 # --- MODELY ---
@@ -42,16 +61,12 @@ class ReviewCreate(BaseModel):
     text: str
 
 # --- ROUTY ---
-
-# Status check (tvoja pôvodná logika)
 @api_router.get("/status")
 async def get_status_checks():
     return await db.status_checks.find({}, {"_id": 0}).to_list(1000)
 
-# Recenzie (nová logika pre frontend)
 @api_router.get("/reviews", response_model=List[Review])
 async def get_reviews():
-    # Získame recenzie a zoradíme od najnovšej
     cursor = db.reviews.find({}, {"_id": 0}).sort("created_at", -1)
     return await cursor.to_list(100)
 
@@ -59,18 +74,9 @@ async def get_reviews():
 async def create_review(input: ReviewCreate):
     new_review = Review(name=input.name, text=input.text)
     doc = new_review.model_dump()
+    # Preveď datetime na iso formát, ak by bol problém s bson
+    doc['created_at'] = doc['created_at'].isoformat()
     await db.reviews.insert_one(doc)
     return new_review
 
-# Pridanie routera a CORS
 app.include_router(api_router)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-logging.basicConfig(level=logging.INFO)
