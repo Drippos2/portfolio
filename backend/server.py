@@ -1,21 +1,21 @@
 from fastapi import FastAPI, APIRouter
-from dotenv import load_dotenv
-from starlette.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
+from dotenv import load_dotenv
+from pathlib import Path
 import os
 import logging
-from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+import uuid
 from datetime import datetime, timezone
 from contextlib import asynccontextmanager
-import uuid
+from typing import List
+from pydantic import BaseModel, Field, ConfigDict
 
 # Konfigurácia logovania
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# --- KONFIGURÁCIA ---
+# Načítanie premenných prostredia
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
@@ -28,7 +28,6 @@ async def lifespan(app: FastAPI):
     global client, db
     mongo_url = os.environ.get('MONGO_URL')
     db_name = os.environ.get('DB_NAME')
-    
     logger.info(f"Pripájam sa k databáze: {db_name}")
     client = AsyncIOMotorClient(mongo_url)
     db = client[db_name]
@@ -37,13 +36,14 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-# --- CORS MIDDLEWARE (Najdôležitejšia časť) ---
+# --- CORS MIDDLEWARE (Musí byť úplne na začiatku) ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Toto povoľuje všetko, musí to fungovať
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["*"]
 )
 
 api_router = APIRouter(prefix="/api")
@@ -74,8 +74,6 @@ async def get_reviews():
 async def create_review(input: ReviewCreate):
     new_review = Review(name=input.name, text=input.text)
     doc = new_review.model_dump()
-    # Preveď datetime na iso formát, ak by bol problém s bson
-    doc['created_at'] = doc['created_at'].isoformat()
     await db.reviews.insert_one(doc)
     return new_review
 
