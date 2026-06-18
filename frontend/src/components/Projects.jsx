@@ -44,7 +44,7 @@ const Projects = ({ translations }) => {
       title: translations.projects.boccacio.title,
       description: translations.projects.boccacio.description,
       image: '/boccacio-preview.jpg',
-      link: 'https://boccacio.vercel.app'
+      link: 'https://www.boccaccio.sk/'
     },
         {
       title: translations.projects.penzionstrba.title,

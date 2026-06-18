@@ -2,7 +2,7 @@ export const translations = {
   sk: {
     nav: {
       home: 'Domov',
-      about: 'O mne',
+      about: 'O nás',
       services: 'Služby',
       projects: 'Projekty',
       skills: 'Zručnosti',
@@ -16,7 +16,7 @@ export const translations = {
       contact: 'Kontaktovať nás'
     },
     about: {
-      title: 'O mne',
+      title: 'O nás',
       description: 'Sme web designery zameraný na tvorbu moderných a profesionálnych webových stránok. Pomáhame firmám zlepšiť ich online prezentáciu pomocou kvalitného dizajnu, funkčnosti a dobrého používateľského zážitku. Taktiež vám vieme spravovať sociálne siete, prípadne dokážeme vám zostrihať videa. Či vytvorit vaše vlastné logo alebo banner pre vašu značku.'
     },
     services: {
@@ -130,7 +130,8 @@ export const translations = {
           'Online objednávka',
           'Pokročilejšie funkcie',
           'Prepojenie databazy pre ukladanie dat',
-          'Admin Panel',
+          'Nový funkčný Admin Panel',
+          'Nasadenie vašej vlastnej web domeny',
           'Možnost pridat ikonku pre web',
         ]
       },

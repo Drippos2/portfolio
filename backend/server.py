@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field, ConfigDict
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Načítanie premenných prostredia
+# Načítanie premenných
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
@@ -28,6 +28,11 @@ async def lifespan(app: FastAPI):
     global client, db
     mongo_url = os.environ.get('MONGO_URL')
     db_name = os.environ.get('DB_NAME')
+    
+    if not mongo_url or not db_name:
+        logger.error("Chýbajú premenné prostredia MONGO_URL alebo DB_NAME!")
+        raise RuntimeError("Konfigurácia databázy nenájdená.")
+
     logger.info(f"Pripájam sa k databáze: {db_name}")
     client = AsyncIOMotorClient(mongo_url)
     db = client[db_name]
@@ -36,7 +41,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-# --- CORS MIDDLEWARE (Musí byť úplne na začiatku) ---
+# --- CORS ---
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -46,9 +51,14 @@ app.add_middleware(
     expose_headers=["*"]
 )
 
+# --- HEALTH CHECK (Povinné pre Render) ---
+@app.get("/")
+async def root():
+    return {"status": "ok", "message": "Backend is running"}
+
+# --- ROUTY ---
 api_router = APIRouter(prefix="/api")
 
-# --- MODELY ---
 class Review(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
@@ -60,7 +70,6 @@ class ReviewCreate(BaseModel):
     name: str
     text: str
 
-# --- ROUTY ---
 @api_router.get("/status")
 async def get_status_checks():
     return await db.status_checks.find({}, {"_id": 0}).to_list(1000)
