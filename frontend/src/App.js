@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { translations } from './data/translations';
 import Header from './components/Header';
@@ -15,7 +15,11 @@ import Footer from './components/Footer';
 import { Toaster } from './components/ui/toaster';
 
 function App() {
-  const currentTranslations = translations.sk;
+  // Inicializácia stavu pre jazyk (predvolená je slovenčina)
+  const [lang, setLang] = useState('sk');
+
+  // Dynamické ťahanie prekladov podľa aktuálne zvoleného jazyka
+  const currentTranslations = translations[lang];
 
   useEffect(() => {
     // Smooth scroll behavior
@@ -26,12 +30,14 @@ function App() {
     <div className="App bg-black min-h-screen">
       <Header
         translations={currentTranslations}
+        currentLang={lang}
+        onLangChange={setLang}
       />
       <Hero translations={currentTranslations} />
       <About translations={currentTranslations} />
       <Services translations={currentTranslations} />
       <ProjectsCarousel translations={currentTranslations} />
-      <Reviews/>
+      <Reviews translations={currentTranslations} />
       <Skills translations={currentTranslations} />
       <WhyMe translations={currentTranslations} />
       <Pricing translations={currentTranslations} />

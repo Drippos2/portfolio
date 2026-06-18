@@ -17,13 +17,13 @@ export const translations = {
     },
     about: {
       title: 'O nás',
-      description: 'Sme web designery zameraný na tvorbu moderných a profesionálnych webových stránok. Pomáhame firmám zlepšiť ich online prezentáciu pomocou kvalitného dizajnu, funkčnosti a dobrého používateľského zážitku. Taktiež vám vieme spravovať sociálne siete, prípadne dokážeme vám zostrihať videa. Či vytvorit vaše vlastné logo alebo banner pre vašu značku.'
+      description: 'Sme web designery zameraný na tvorbu moderných a profesionálnych webových stránok. Pomáhame firmám zlepšiť ich online prezentáciu pomocou kvalitného dizajnu, funkčnosti a dobrého používateľského zážitku. Taktiež vám vieme spravovať sociálne sieti, prípadne dokážeme vám zostrihať videa. Či vytvorit vaše vlastné logo alebo banner pre vašu značku.'
     },
     services: {
       title: 'Služby',
       webDesign: {
         title: 'Web Design',
-        description: 'Moderné a responzívne webové stránky pre firmy a podniky.'
+        description: 'Moderné a responzívne webové stránky pre firmy and podniky.'
       },
       videoEditing: {
         title: 'Video Editing',
@@ -53,7 +53,7 @@ export const translations = {
         title: 'Penzión Kastelan',
         description: 'Luxusný penzión v historických Bojniciach.'
       },
-       penzionstrba: {
+      penzionstrba: {
         title: 'Penzión Štrba',
         description: 'Viac než len ubytovanie, je to tatranský zážitok.'
       }
@@ -89,7 +89,7 @@ export const translations = {
       },
       improvement: {
         title: 'Neustále zdokonaľovanie',
-        description: 'Stále sa vzdelávame a sledujeme najnovšie trendy v dizajne.'
+        description: 'Stále sa vzdelávame a sledujsme najnovšie trendy v dizajne.'
       },
       learning: {
         title: 'Rýchle učenie sa',
@@ -132,19 +132,19 @@ export const translations = {
           'Prepojenie databazy pre ukladanie dat',
           'Nový funkčný Admin Panel',
           'Nasadenie vašej vlastnej web domeny',
-          'Možnost pridat ikonku pre web',
+          'Možnost pridat ikonku pre web'
         ]
       },
-        social: {
+      social: {
         title: 'Správa sociálnych sietí',
         price: '100 €',
         period: 'mesačne',
         features: [
-          '3 príspevky týždenne (Feed/Reels)', // KONKRÉTNY POČET
-          'Návrh grafiky a copywritingu', 
+          '3 príspevky týždenne (Feed/Reels)',
+          'Návrh grafiky a copywritingu',
           'Základná správa komentárov',
           'Mesačný report výsledkov',
-          'Nastavenie BIO a vizuálu profilu'  // BONUSOVÁ HODNOTA
+          'Nastavenie BIO a vizuálu profilu'
         ]
       },
       video: {
@@ -189,7 +189,7 @@ export const translations = {
   cz: {
     nav: {
       home: 'Domů',
-      about: 'O mně',
+      about: 'O nás',
       services: 'Služby',
       projects: 'Projekty',
       skills: 'Dovednosti',
@@ -197,14 +197,14 @@ export const translations = {
       contact: 'Kontakt'
     },
     hero: {
-      title: 'Web Dizajn & Digitální řešení',
+      title: 'Web Design & Digitální Služby',
       subtitle: 'Tvoříme moderní a profesionální webové stránky, které pomáhají firmám růst a budovat silnou online prezentaci.',
       viewProjects: 'Zobrazit projekty',
-      contact: 'Kontaktovat mě'
+      contact: 'Kontaktovat nás'
     },
     about: {
-      title: 'O mně',
-      description: 'Jsem web designer zaměřený na tvorbu moderních a profesionálních webových stránek. Pomáhám firmám zlepšit jejich online prezentaci pomocí kvalitního designu, funkčnosti a dobrého uživatelského zážitku. Také vám umím spravovat sociální sítě, případně dokážu vám sestříhat videa.'
+      title: 'O nás',
+      description: 'Jsme web designeři zaměření na tvorbu moderních a profesionálních webových stránek. Pomáháme firmám zlepšit jejich online prezentaci pomocí kvalitního designu, funkčnosti a dobrého uživatelského zážitku. Také vám umíme spravovat sociální sítě, případně dokážeme sestříhat videa. Či vytvořit vaše vlastní logo nebo banner pro vaši značku.'
     },
     services: {
       title: 'Služby',
@@ -219,6 +219,10 @@ export const translations = {
       socialMedia: {
         title: 'Správa sociálních sítí',
         description: 'Budování online přítomnosti a profesionální správa profilů.'
+      },
+      logoDesign: {
+        title: 'Tvorba log a bannerů',
+        description: 'Jedinečné a profesionální designy pro vaši značku.'
       }
     },
     projects: {
@@ -235,6 +239,10 @@ export const translations = {
       kastelan: {
         title: 'Penzion Kastelan',
         description: 'Luxusní penzion v historických Bojnicích.'
+      },
+      penzionstrba: {
+        title: 'Penzion Štrba',
+        description: 'Víc než jen ubytování, je to tatranský zážitek.'
       }
     },
     reviews: {
@@ -261,22 +269,22 @@ export const translations = {
       expertise: 'Odbornost'
     },
     whyMe: {
-      title: 'Proč si vybrat mě',
+      title: 'Proč si vybrat nás?',
       creative: {
         title: 'Kreativní přístup',
-        description: 'Každému projektu přistupuji s unikátním a inovativním myšlením.'
+        description: 'Při každém projektu přistupujeme s unikátním a inovativním myšlením.'
       },
       improvement: {
         title: 'Neustálé zdokonalování',
-        description: 'Stále se vzdělávám a sleduji nejnovější trendy v designu.'
+        description: 'Stále se vzděláváme a sledujeme nejnovější trendy v designu.'
       },
       learning: {
         title: 'Rychlé učení se',
-        description: 'Rychle se adaptuji na nové technologie a požadavky.'
+        description: 'Rychle se adaptujeme na nové technologie a požadavky.'
       },
       modern: {
         title: 'Moderní design',
-        description: 'Tvořím weby, které jsou vizuálně atraktivní a funkční.'
+        description: 'Tvoříme weby, které jsou vizuálně atraktivní a funkční.'
       }
     },
     pricing: {
@@ -284,21 +292,22 @@ export const translations = {
       from: 'od',
       monthly: 'měsíčně',
       perVideo: 'za video',
+      perPiece: 'za 1ks',
       basic: {
         title: 'Základní webová stránka',
-        price: '150 €',
+        price: '200 €',
         features: [
           'Moderní, elegantní design',
           'Základní funkce',
           'Menu, O nás, Kontakt',
           'Novinky a informace',
-          'Otevírací hodiny',
+          'Otevírací doba',
           'Přesná adresa podniku'
         ]
       },
       advanced: {
         title: 'Pokročilá webová stránka',
-        price: '300 €',
+        price: 'od 450 €',
         features: [
           'Vše ze základní verze',
           'Animace textů',
@@ -306,18 +315,23 @@ export const translations = {
           '3D efekty a mnoho dalšího',
           'Web rezervace',
           'Online objednávka',
-          'Pokročilejší funkce'
+          'Pokročilejší funkce',
+          'Propojení databáze pro ukládání dat',
+          'Nový funkční Admin Panel',
+          'Nasazení vaší vlastní web domény',
+          'Možnost přidat ikonku pro web'
         ]
       },
       social: {
         title: 'Správa sociálních sítí',
-        price: '50 €',
+        price: '100 €',
         period: 'měsíčně',
         features: [
-          'Pravidelné příspěvky',
-          'Grafický design',
-          'Správa komentářů',
-          'Analýza výkonnosti'
+          '3 příspěvky týdně (Feed/Reels)',
+          'Návrh grafiky a copywritingu',
+          'Základní správa komentářů',
+          'Měsíční report výsledků',
+          'Nastavení BIO a vizuálu profilu'
         ]
       },
       video: {
@@ -332,27 +346,26 @@ export const translations = {
         ]
       },
       logo: {
-        title: 'Tvorba logov a bannerov',
+        title: 'Tvorba log a bannerů',
         price: '30 €',
         period: 'za 1ks',
         features: [
-          'Originálny dizajn loga',
-          'Rôzne verzie (farebné, čiernobiele)',
-          'Bannery pre sociálne siete',
-          'Súbory vo vysokom rozlíšení'
+          'Originální design loga',
+          'Různé verze (barevné, černobílé)',
+          'Bannery pro sociální sítě',
+          'Soubory ve vysokém rozlišení'
         ]
       }
     },
-    
     contact: {
       title: 'Kontakt',
-      description: 'Máte projekt? Kontaktujte mě a začněme spolupracovat!',
+      description: 'Máte projekt? Kontaktujte nás a začněme spolupracovat!',
       name: 'Jméno',
       email: 'Email',
       message: 'Zpráva',
       send: 'Odeslat zprávu',
       info: 'Kontaktní informace',
-      or: 'Nebo mě kontaktujte přímo:'
+      or: 'Nebo nás kontaktujte přímo:'
     },
     footer: {
       rights: 'Všechna práva vyhrazena.',
@@ -363,7 +376,7 @@ export const translations = {
   en: {
     nav: {
       home: 'Home',
-      about: 'About',
+      about: 'About us',
       services: 'Services',
       projects: 'Projects',
       skills: 'Skills',
@@ -371,14 +384,14 @@ export const translations = {
       contact: 'Contact'
     },
     hero: {
-      title: 'Web Design & Digital Solutions',
-      subtitle: 'Creating modern and professional websites that help businesses grow and build a strong online presence.',
-      viewProjects: 'View Projects',
-      contact: 'Contact Me'
+      title: 'Web Design & Digital Services',
+      subtitle: 'We create modern and professional websites that help businesses grow and build a strong online presence.',
+      viewProjects: 'View projects',
+      contact: 'Contact us'
     },
     about: {
-      title: 'About Me',
-      description: 'I am a web designer focused on creating modern and professional websites. I help businesses improve their online presence through quality design, functionality, and good user experience. I can also manage your social media and edit videos for you.'
+      title: 'About us',
+      description: 'We are web designers focused on creating modern and professional websites. We help companies improve their online presentation through quality design, functionality, and a great user experience. We can also manage your social media, edit your videos, or create your own logo and banner for your brand.'
     },
     services: {
       title: 'Services',
@@ -392,12 +405,16 @@ export const translations = {
       },
       socialMedia: {
         title: 'Social Media Management',
-        description: 'Building online presence and professional profile management.'
+        description: 'Building an online presence and professional profile management.'
+      },
+      logoDesign: {
+        title: 'Logo and Banner Design',
+        description: 'Unique and professional designs for your brand.'
       }
     },
     projects: {
       title: 'Projects',
-      viewProject: 'View Project',
+      viewProject: 'View project',
       toscanna: {
         title: 'Toscanna Restaurant',
         description: 'Modern website for a restaurant.'
@@ -409,17 +426,21 @@ export const translations = {
       kastelan: {
         title: 'Pension Kastelan',
         description: 'Luxury pension in historic Bojnice.'
+      },
+      penzionstrba: {
+        title: 'Pension Štrba',
+        description: 'More than just accommodation, it is a Tatra experience.'
       }
     },
     reviews: {
       title: 'Reviews',
       review1: {
-        name: 'Maria Kovačová',
+        name: 'Mária Kováčová',
         role: 'Restaurant Owner',
         text: 'Excellent work! The new website brought us more reservations and customers appreciate the modern design.'
       },
       review2: {
-        name: 'John Novák',
+        name: 'Ján Novák',
         role: 'Pension Owner',
         text: 'Professional approach and fast delivery. The website perfectly matches our expectations.'
       },
@@ -435,22 +456,22 @@ export const translations = {
       expertise: 'Expertise'
     },
     whyMe: {
-      title: 'Why Choose Me',
+      title: 'Why Choose Us?',
       creative: {
         title: 'Creative Approach',
-        description: 'I approach each project with unique and innovative thinking.'
+        description: 'We approach each project with unique and innovative thinking.'
       },
       improvement: {
         title: 'Continuous Improvement',
-        description: 'I constantly learn and follow the latest design trends.'
+        description: 'We constantly learn and follow the latest design trends.'
       },
       learning: {
         title: 'Fast Learning',
-        description: 'I quickly adapt to new technologies and requirements.'
+        description: 'We quickly adapt to new technologies and requirements.'
       },
       modern: {
         title: 'Modern Design',
-        description: 'I create websites that are visually attractive and functional.'
+        description: 'We create websites that are visually attractive and functional.'
       }
     },
     pricing: {
@@ -458,13 +479,14 @@ export const translations = {
       from: 'from',
       monthly: 'monthly',
       perVideo: 'per video',
+      perPiece: 'per pc',
       basic: {
         title: 'Basic Website',
-        price: '€150',
+        price: '200 €',
         features: [
           'Modern, elegant design',
           'Basic features',
-          'Menu, About, Contact',
+          'Menu, About us, Contact',
           'News and information',
           'Opening hours',
           'Exact business address'
@@ -472,46 +494,51 @@ export const translations = {
       },
       advanced: {
         title: 'Advanced Website',
-        price: '€300',
+        price: 'from 450 €',
         features: [
           'Everything from basic version',
           'Text animations',
           'Smooth scroll and fade-in effects',
           '3D effects and much more',
-          'Reservation system',
+          'Web reservations',
           'Online ordering',
-          'Advanced features'
+          'Advanced features',
+          'Database integration for data storage',
+          'New functional Admin Panel',
+          'Deployment of your own web domain',
+          'Option to add a website icon'
         ]
       },
       social: {
         title: 'Social Media Management',
-        price: '€50',
+        price: '100 €',
         period: 'monthly',
         features: [
-          'Regular posts',
-          'Graphic design',
-          'Comment management',
-          'Performance analysis'
+          '3 posts per week (Feed/Reels)',
+          'Graphic design and copywriting',
+          'Basic comment management',
+          'Monthly performance report',
+          'BIO and profile visual setup'
         ]
       },
       video: {
         title: 'Video Editing',
-        price: '€10',
+        price: '10 €',
         period: 'per video',
         features: [
           'Professional editing',
           'Color correction',
           'Subtitles and animations',
-          'HD quality export'
+          'Export in HD quality'
         ]
       },
       logo: {
-        title: 'Logo and banner design',
+        title: 'Logo and Banner Design',
         price: '30 €',
-        period: 'za 1ks',
+        period: 'per pc',
         features: [
           'Original logo design',
-          'Various versions (color, black and white)',
+          'Various versions (color, black & white)',
           'Social media banners',
           'High-resolution files'
         ]
@@ -519,18 +546,205 @@ export const translations = {
     },
     contact: {
       title: 'Contact',
-      description: 'Have a project? Contact me and let\'s start working together!',
+      description: 'Have a project? Contact us and let\'s start working together!',
       name: 'Name',
       email: 'Email',
       message: 'Message',
       send: 'Send Message',
       info: 'Contact Information',
-      or: 'Or contact me directly:'
+      or: 'Or contact us directly:'
     },
     footer: {
       rights: 'All rights reserved.',
       madeWith: 'Made with',
       by: 'by'
+    }
+  },
+  de: {
+    nav: {
+      home: 'Startseite',
+      about: 'Über uns',
+      services: 'Dienstleistungen',
+      projects: 'Projekte',
+      skills: 'Fähigkeiten',
+      pricing: 'Preise',
+      contact: 'Kontakt'
+    },
+    hero: {
+      title: 'Webdesign & Digitale Dienste',
+      subtitle: 'Wir erstellen moderne und professionelle Websites, die Unternehmen helfen zu wachsen und eine starke Online-Präsenz aufzubauen.',
+      viewProjects: 'Projekte ansehen',
+      contact: 'Uns kontaktieren'
+    },
+    about: {
+      title: 'Über uns',
+      description: 'Wir sind Webdesigner, die sich auf die Erstellung moderner und professioneller Websites spezialisiert haben. Wir helfen Unternehmen, ihre Online-Präsenz durch hochwertiges Design, Funktionalität und eine hervorragende Benutzererfahrung zu verbessern. Wir können auch Ihre sozialen Medien verwalten, Ihre Videos schneiden oder Ihr eigenes Logo und Banner für Ihre Marke erstellen.'
+    },
+    services: {
+      title: 'Dienstleistungen',
+      webDesign: {
+        title: 'Webdesign',
+        description: 'Moderne und responsive Websites für Unternehmen und Betriebe.'
+      },
+      videoEditing: {
+        title: 'Videobearbeitung',
+        description: 'Professionell bearbeitete Videos für Marketing und soziale Medien.'
+      },
+      socialMedia: {
+        title: 'Social Media Management',
+        description: 'Aufbau der Online-Präsenz und professionelle Profilverwaltung.'
+      },
+      logoDesign: {
+        title: 'Logo- und Bannerdesign',
+        description: 'Einzigartige und professionelle Designs für Ihre Marke.'
+      }
+    },
+    projects: {
+      title: 'Projekte',
+      viewProject: 'Projekt anzeigen',
+      toscanna: {
+        title: 'Toscanna Restaurant',
+        description: 'Moderne Website für ein Restaurant.'
+      },
+      boccacio: {
+        title: 'Boccacio Restaurant',
+        description: 'Elegante Website mit einfacher Navigation.'
+      },
+      kastelan: {
+        title: 'Pension Kastelan',
+        description: 'Luxuriöse Pension im historischen Bojnice.'
+      },
+      penzionstrba: {
+        title: 'Pension Štrba',
+        description: 'Mehr als nur eine Unterkunft, es ist ein Tatra-Erlebnis.'
+      }
+    },
+    reviews: {
+      title: 'Bewertungen',
+      review1: {
+        name: 'Mária Kováčová',
+        role: 'Restaurantbesitzerin',
+        text: 'Hervorragende Arbeit! Die neue Website hat uns mehr Reservierungen eingebracht und die Kunden schätzen das moderne Design.'
+      },
+      review2: {
+        name: 'Ján Novák',
+        role: 'Pensionsbesitzer',
+        text: 'Professionelle Herangehensweise und schnelle Lieferung. Die Website entspricht genau unseren Vorstellungen.'
+      },
+      review3: {
+        name: 'Peter Svoboda',
+        role: 'Fitnessstudio-Besitzer',
+        text: 'Tolle Kommunikation und kreative Lösungen. Ich empfehle es jedem, der nach hochwertigem Webdesign sucht.'
+      }
+    },
+    skills: {
+      title: 'Fähigkeiten',
+      technologies: 'Technologien',
+      expertise: 'Fachwissen'
+    },
+    whyMe: {
+      title: 'Warum uns wählen?',
+      creative: {
+        title: 'Kreativer Ansatz',
+        description: 'Wir gehen an jedes Projekt mit einzigartigem und innovativem Denken heran.'
+      },
+      improvement: {
+        title: 'Kontinuierliche Verbesserung',
+        description: 'Wir lernen ständig weiter und verfolgen die neuesten Designtrends.'
+      },
+      learning: {
+        title: 'Schnelles Lernen',
+        description: 'Wir passen uns schnell an neue Technologien und Anforderungen an.'
+      },
+      modern: {
+        title: 'Modernes Design',
+        description: 'Wir erstellen Websites, die visuell ansprechend und funktional sind.'
+      }
+    },
+    pricing: {
+      title: 'Preise',
+      from: 'ab',
+      monthly: 'monatlich',
+      perVideo: 'pro Video',
+      perPiece: 'pro Stk',
+      basic: {
+        title: 'Basis-Website',
+        price: '200 €',
+        features: [
+          'Modernes, elegantes Design',
+          'Grundlegende Funktionen',
+          'Menü, Über uns, Kontakt',
+          'Neuigkeiten und Informationen',
+          'Öffnungszeiten',
+          'Genaue Adresse des Unternehmens'
+        ]
+      },
+      advanced: {
+        title: 'Erweiterte Website',
+        price: 'ab 450 €',
+        features: [
+          'Alles aus der Basisversion',
+          'Textanimationen',
+          'Smooth Scroll und Fade-in-Effekte',
+          '3D-Effekte und vieles mehr',
+          'Web-Reservierungen',
+          'Online-Bestellung',
+          'Fortgeschrittene Funktionen',
+          'Datenbankanbindung zur Datenspeicherung',
+          'Neues funktionelles Admin-Panel',
+          'Bereitstellung Ihrer eigenen Webdomain',
+          'Möglichkeit, ein Website-Icon hinzuzufügen'
+        ]
+      },
+      social: {
+        title: 'Social Media Management',
+        price: '100 €',
+        period: 'monatlich',
+        features: [
+          '3 Beiträge pro Woche (Feed/Reels)',
+          'Grafikdesign und Copywriting',
+          'Grundlegendes Kommentar-Management',
+          'Monatlicher Ergebnisbericht',
+          'BIO- und Profil-Visual-Setup'
+        ]
+      },
+      video: {
+        title: 'Videobearbeitung',
+        price: '10 €',
+        period: 'pro Video',
+        features: [
+          'Professioneller Schnitt',
+          'Farbkorrektur',
+          'Untertitel und Animationen',
+          'Export in HD-Qualität'
+        ]
+      },
+      logo: {
+        title: 'Logo- und Bannerdesign',
+        price: '30 €',
+        period: 'pro Stk',
+        features: [
+          'Originelles Logo-Design',
+          'Verschiedene Versionen (Farbe, Schwarz-Weiß)',
+          'Banner für soziale Medien',
+          'Dateien in hoher Auflösung'
+        ]
+      }
+    },
+    contact: {
+      title: 'Kontakt',
+      description: 'Haben Sie ein Projekt? Kontaktieren Sie uns und lassen Sie uns zusammenarbeiten!',
+      name: 'Name',
+      email: 'E-Mail',
+      message: 'Nachricht',
+      send: 'Nachricht senden',
+      info: 'Kontaktinformationen',
+      or: 'Oder kontaktieren Sie uns direkt:'
+    },
+    footer: {
+      rights: 'Alle Rechte vorbehalten.',
+      madeWith: 'Erstellt mit',
+      by: 'von'
     }
   }
 };
