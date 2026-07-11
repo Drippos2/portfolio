@@ -41,16 +41,17 @@ const LanguageSwitcher = ({ currentLang, onLanguageChange }) => {
   return (
     <div className="flex gap-2">
       {languages.map((lang) => (
-        <Button
-          key={lang.code}
-          variant={currentLang === lang.code ? 'default' : 'ghost'}
-          size="sm"
-          onClick={() => onLanguageChange(lang.code)}
-          className="p-2 h-9 w-12 transition-all duration-300 hover:scale-110 flex items-center justify-center"
-          title={lang.name}
-        >
-          {lang.flag}
-        </Button>
+    <Button
+       key={lang.code}
+      variant={currentLang === lang.code ? 'default' : 'ghost'}
+     size="sm"
+     onClick={() => onLanguageChange(lang.code)}
+     className="p-2 h-9 w-12 transition-all duration-300 hover:scale-110 flex items-center justify-center"
+     title={lang.name}
+     aria-label={`Zmeniť jazyk na ${lang.name}`} // PRIDANÝ RIADOK
+     >
+    {lang.flag}
+       </Button>
       ))}
     </div>
   );
