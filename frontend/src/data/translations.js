@@ -23,7 +23,7 @@ export const translations = {
       title: 'Služby',
       webDesign: {
         title: 'Web Design',
-        description: 'Moderné a responzívne webové stránky pre firmy and podniky.'
+        description: 'Moderné a responzívne webové stránky pre firmy a podniky.'
       },
       videoEditing: {
         title: 'Video Editing',
@@ -67,7 +67,7 @@ export const translations = {
       },
       review2: {
         name: 'Ján Novák',
-        role: 'Majiteľ penzionu',
+        role: 'Majiteľ penziónu',
         text: 'Profesionálny prístup a rýchle dodanie. Web presne zodpovedá našim predstavám.'
       },
       review3: {
@@ -85,11 +85,11 @@ export const translations = {
       title: 'Prečo si vybrať nás?',
       creative: {
         title: 'Kreatívny prístup',
-        description: 'Pri Každom projekte pristupujeme s unikátnym a inovatívnym myslením.'
+        description: 'Pri každom projekte pristupujeme s unikátnym a inovatívnym myslením.'
       },
       improvement: {
         title: 'Neustále zdokonaľovanie',
-        description: 'Stále sa vzdelávame a sledujsme najnovšie trendy v dizajne.'
+        description: 'Stále sa vzdelávame a sledujeme najnovšie trendy v dizajne.'
       },
       learning: {
         title: 'Rýchle učenie sa',
@@ -109,65 +109,30 @@ export const translations = {
       basic: {
         title: 'Základná webová stránka',
         price: '200 €',
-        features: [
-          'Moderný, elegantný dizajn',
-          'Základné funkcie',
-          'Menu, O nás, Kontakt',
-          'Novinky a informácie',
-          'Otváracie hodiny',
-          'Presná adresa podniku'
-        ]
+        features: ['Moderný, elegantný dizajn', 'Základné funkcie', 'Menu, O nás, Kontakt', 'Novinky a informácie', 'Otváracie hodiny', 'Presná adresa podniku']
       },
       advanced: {
         title: 'Pokročilá webová stránka',
         price: 'od 450 €',
-        features: [
-          'Všetko zo základnej verzie',
-          'Animácie textov',
-          'Smooth scroll a fade-in efekty',
-          '3D efekty a mnoho ďalšieho',
-          'Web rezervácie',
-          'Online objednávka',
-          'Pokročilejšie funkcie',
-          'Prepojenie databazy pre ukladanie dat',
-          'Nový funkčný Admin Panel',
-          'Nasadenie vašej vlastnej web domeny',
-          'Možnost pridat ikonku pre web'
-        ]
+        features: ['Všetko zo základnej verzie', 'Animácie textov', 'Smooth scroll a fade-in efekty', '3D efekty a mnoho ďalšieho', 'Web rezervácie', 'Online objednávka', 'Pokročilejšie funkcie', 'Prepojenie databázy pre ukladanie dát', 'Nový funkčný Admin Panel', 'Nasadenie vašej vlastnej web domény', 'Možnosť pridať ikonku pre web']
       },
       social: {
         title: 'Správa sociálnych sietí',
         price: '100 €',
         period: 'mesačne',
-        features: [
-          '3 príspevky týždenne (Feed/Reels)',
-          'Návrh grafiky a copywritingu',
-          'Základná správa komentárov',
-          'Mesačný report výsledkov',
-          'Nastavenie BIO a vizuálu profilu'
-        ]
+        features: ['3 príspevky týždenne (Feed/Reels)', 'Návrh grafiky a copywritingu', 'Základná správa komentárov', 'Mesačný report výsledkov', 'Nastavenie BIO a vizuálu profilu']
       },
       video: {
         title: 'Video Editing',
         price: '10 €',
         period: 'za video',
-        features: [
-          'Profesionálny strih',
-          'Farebná korekcia',
-          'Titulky a animácie',
-          'Export v HD kvalite'
-        ]
+        features: ['Profesionálny strih', 'Farebná korekcia', 'Titulky a animácie', 'Export v HD kvalite']
       },
       logo: {
         title: 'Tvorba logov a bannerov',
         price: '30 €',
         period: 'za 1ks',
-        features: [
-          'Originálny dizajn loga',
-          'Rôzne verzie (farebné, čiernobiele)',
-          'Bannery pre sociálne siete',
-          'Súbory vo vysokom rozlíšení'
-        ]
+        features: ['Originálny dizajn loga', 'Rôzne verzie (farebné, čiernobiele)', 'Bannery pre sociálne siete', 'Súbory vo vysokom rozlíšení']
       }
     },
     contact: {
@@ -197,7 +162,7 @@ export const translations = {
       contact: 'Kontakt'
     },
     hero: {
-      title: 'Web Design & Digitální Služby',
+      title: 'Špičkový web, který vás odliší od konkurence.',
       subtitle: 'Tvoříme moderní a profesionální webové stránky, které pomáhají firmám růst a budovat silnou online prezentaci.',
       viewProjects: 'Zobrazit projekty',
       contact: 'Kontaktovat nás'
@@ -296,65 +261,30 @@ export const translations = {
       basic: {
         title: 'Základní webová stránka',
         price: '200 €',
-        features: [
-          'Moderní, elegantní design',
-          'Základní funkce',
-          'Menu, O nás, Kontakt',
-          'Novinky a informace',
-          'Otevírací doba',
-          'Přesná adresa podniku'
-        ]
+        features: ['Moderní, elegantní design', 'Základní funkce', 'Menu, O nás, Kontakt', 'Novinky a informace', 'Otevírací doba', 'Přesná adresa podniku']
       },
       advanced: {
         title: 'Pokročilá webová stránka',
         price: 'od 450 €',
-        features: [
-          'Vše ze základní verze',
-          'Animace textů',
-          'Smooth scroll a fade-in efekty',
-          '3D efekty a mnoho dalšího',
-          'Web rezervace',
-          'Online objednávka',
-          'Pokročilejší funkce',
-          'Propojení databáze pro ukládání dat',
-          'Nový funkční Admin Panel',
-          'Nasazení vaší vlastní web domény',
-          'Možnost přidat ikonku pro web'
-        ]
+        features: ['Vše ze základní verze', 'Animace textů', 'Smooth scroll a fade-in efekty', '3D efekty a mnoho dalšího', 'Web rezervace', 'Online objednávka', 'Pokročilejší funkce', 'Propojení databáze pro ukládání dat', 'Nový funkční Admin Panel', 'Nasazení vaší vlastní web domény', 'Možnost přidat ikonku pro web']
       },
       social: {
         title: 'Správa sociálních sítí',
         price: '100 €',
         period: 'měsíčně',
-        features: [
-          '3 příspěvky týdně (Feed/Reels)',
-          'Návrh grafiky a copywritingu',
-          'Základní správa komentářů',
-          'Měsíční report výsledků',
-          'Nastavení BIO a vizuálu profilu'
-        ]
+        features: ['3 příspěvky týdně (Feed/Reels)', 'Návrh grafiky a copywritingu', 'Základní správa komentářů', 'Měsíční report výsledků', 'Nastavení BIO a vizuálu profilu']
       },
       video: {
         title: 'Video Editing',
         price: '10 €',
         period: 'za video',
-        features: [
-          'Profesionální střih',
-          'Barevná korekce',
-          'Titulky a animace',
-          'Export v HD kvalitě'
-        ]
+        features: ['Profesionální střih', 'Barevná korekce', 'Titulky a animace', 'Export v HD kvalitě']
       },
       logo: {
         title: 'Tvorba log a bannerů',
         price: '30 €',
         period: 'za 1ks',
-        features: [
-          'Originální design loga',
-          'Různé verze (barevné, černobílé)',
-          'Bannery pro sociální sítě',
-          'Soubory ve vysokém rozlišení'
-        ]
+        features: ['Originální design loga', 'Různé verze (barevné, černobílé)', 'Bannery pro sociální sítě', 'Soubory ve vysokém rozlišení']
       }
     },
     contact: {
@@ -384,7 +314,7 @@ export const translations = {
       contact: 'Contact'
     },
     hero: {
-      title: 'Web Design & Digital Services',
+      title: 'High-end web that sets you apart from the competition.',
       subtitle: 'We create modern and professional websites that help businesses grow and build a strong online presence.',
       viewProjects: 'View projects',
       contact: 'Contact us'
@@ -483,65 +413,30 @@ export const translations = {
       basic: {
         title: 'Basic Website',
         price: '200 €',
-        features: [
-          'Modern, elegant design',
-          'Basic features',
-          'Menu, About us, Contact',
-          'News and information',
-          'Opening hours',
-          'Exact business address'
-        ]
+        features: ['Modern, elegant design', 'Basic features', 'Menu, About us, Contact', 'News and information', 'Opening hours', 'Exact business address']
       },
       advanced: {
         title: 'Advanced Website',
         price: 'from 450 €',
-        features: [
-          'Everything from basic version',
-          'Text animations',
-          'Smooth scroll and fade-in effects',
-          '3D effects and much more',
-          'Web reservations',
-          'Online ordering',
-          'Advanced features',
-          'Database integration for data storage',
-          'New functional Admin Panel',
-          'Deployment of your own web domain',
-          'Option to add a website icon'
-        ]
+        features: ['Everything from basic version', 'Text animations', 'Smooth scroll and fade-in effects', '3D effects and much more', 'Web reservations', 'Online ordering', 'Advanced features', 'Database integration for data storage', 'New functional Admin Panel', 'Deployment of your own web domain', 'Option to add a website icon']
       },
       social: {
         title: 'Social Media Management',
         price: '100 €',
         period: 'monthly',
-        features: [
-          '3 posts per week (Feed/Reels)',
-          'Graphic design and copywriting',
-          'Basic comment management',
-          'Monthly performance report',
-          'BIO and profile visual setup'
-        ]
+        features: ['3 posts per week (Feed/Reels)', 'Graphic design and copywriting', 'Basic comment management', 'Monthly performance report', 'BIO and profile visual setup']
       },
       video: {
         title: 'Video Editing',
         price: '10 €',
         period: 'per video',
-        features: [
-          'Professional editing',
-          'Color correction',
-          'Subtitles and animations',
-          'Export in HD quality'
-        ]
+        features: ['Professional editing', 'Color correction', 'Subtitles and animations', 'Export in HD quality']
       },
       logo: {
         title: 'Logo and Banner Design',
         price: '30 €',
         period: 'per pc',
-        features: [
-          'Original logo design',
-          'Various versions (color, black & white)',
-          'Social media banners',
-          'High-resolution files'
-        ]
+        features: ['Original logo design', 'Various versions (color, black & white)', 'Social media banners', 'High-resolution files']
       }
     },
     contact: {
@@ -571,7 +466,7 @@ export const translations = {
       contact: 'Kontakt'
     },
     hero: {
-      title: 'Webdesign & Digitale Dienste',
+      title: 'High-End-Web, das Sie von der Konkurrenz abhebt.',
       subtitle: 'Wir erstellen moderne und professionelle Websites, die Unternehmen helfen zu wachsen und eine starke Online-Präsenz aufzubauen.',
       viewProjects: 'Projekte ansehen',
       contact: 'Uns kontaktieren'
@@ -670,65 +565,30 @@ export const translations = {
       basic: {
         title: 'Basis-Website',
         price: '200 €',
-        features: [
-          'Modernes, elegantes Design',
-          'Grundlegende Funktionen',
-          'Menü, Über uns, Kontakt',
-          'Neuigkeiten und Informationen',
-          'Öffnungszeiten',
-          'Genaue Adresse des Unternehmens'
-        ]
+        features: ['Modernes, elegantes Design', 'Grundlegende Funktionen', 'Menü, Über uns, Kontakt', 'Neuigkeiten und Informationen', 'Öffnungszeiten', 'Genaue Adresse des Unternehmens']
       },
       advanced: {
         title: 'Erweiterte Website',
         price: 'ab 450 €',
-        features: [
-          'Alles aus der Basisversion',
-          'Textanimationen',
-          'Smooth Scroll und Fade-in-Effekte',
-          '3D-Effekte und vieles mehr',
-          'Web-Reservierungen',
-          'Online-Bestellung',
-          'Fortgeschrittene Funktionen',
-          'Datenbankanbindung zur Datenspeicherung',
-          'Neues funktionelles Admin-Panel',
-          'Bereitstellung Ihrer eigenen Webdomain',
-          'Möglichkeit, ein Website-Icon hinzuzufügen'
-        ]
+        features: ['Alles aus der Basisversion', 'Textanimationen', 'Smooth Scroll und Fade-in-Effekte', '3D-Effekte und vieles mehr', 'Web-Reservierungen', 'Online-Bestellung', 'Fortgeschrittene Funktionen', 'Datenbankanbindung zur Datenspeicherung', 'Neues funktionelles Admin-Panel', 'Bereitstellung Ihrer eigenen Webdomain', 'Möglichkeit, ein Website-Icon hinzuzufügen']
       },
       social: {
         title: 'Social Media Management',
         price: '100 €',
         period: 'monatlich',
-        features: [
-          '3 Beiträge pro Woche (Feed/Reels)',
-          'Grafikdesign und Copywriting',
-          'Grundlegendes Kommentar-Management',
-          'Monatlicher Ergebnisbericht',
-          'BIO- und Profil-Visual-Setup'
-        ]
+        features: ['3 Beiträge pro Woche (Feed/Reels)', 'Grafikdesign und Copywriting', 'Grundlegendes Kommentar-Management', 'Monatlicher Ergebnisbericht', 'BIO- und Profil-Visual-Setup']
       },
       video: {
         title: 'Videobearbeitung',
         price: '10 €',
         period: 'pro Video',
-        features: [
-          'Professioneller Schnitt',
-          'Farbkorrektur',
-          'Untertitel und Animationen',
-          'Export in HD-Qualität'
-        ]
+        features: ['Professioneller Schnitt', 'Farbkorrektur', 'Untertitel und Animationen', 'Export in HD-Qualität']
       },
       logo: {
         title: 'Logo- und Bannerdesign',
         price: '30 €',
         period: 'pro Stk',
-        features: [
-          'Originelles Logo-Design',
-          'Verschiedene Versionen (Farbe, Schwarz-Weiß)',
-          'Banner für soziale Medien',
-          'Dateien in hoher Auflösung'
-        ]
+        features: ['Originelles Logo-Design', 'Verschiedene Versionen (Farbe, Schwarz-Weiß)', 'Banner für soziale Medien', 'Dateien in hoher Auflösung']
       }
     },
     contact: {

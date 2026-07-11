@@ -30,13 +30,14 @@ const Header = ({ translations, currentLang, onLangChange }) => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/90 backdrop-blur-md border-b border-border shadow-lg' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'bg-[#020202]/95 backdrop-blur-md border-b border-white/10' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="cursor-pointer" onClick={() => scrollToSection('home')}>
-            <img src="/pfp.webp" alt="DuoVision STUDIO Logo" className="h-16 md:h-20 w-auto transition-transform hover:scale-105" />
+          <div className="cursor-pointer z-50" onClick={() => scrollToSection('home')}>
+            <img src="/pfp.webp" alt="DuoVision STUDIO Logo" className="h-12 md:h-20 w-auto transition-transform hover:scale-105" />
           </div>
 
+          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
               <button key={item.id} onClick={() => scrollToSection(item.id)} className="text-gray-300 hover:text-primary transition-colors font-medium">
@@ -45,44 +46,36 @@ const Header = ({ translations, currentLang, onLangChange }) => {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-6">
-            <div className="flex items-center gap-5">
-              <a href="tel:0910151751" className="text-gray-300 hover:text-primary transition-all hover:scale-110" title="Telefón"><Phone size={22} /></a>
-              {/* Instagram pevná farba pre istotu */}
-              <a href="https://www.instagram.com/duovisionstudiosk/" target="_blank" rel="noopener noreferrer" className="text-[#E1306C] hover:text-[#C13584] transition-all hover:scale-110" title="Instagram">
-                <Instagram size={22} />
-              </a>
-              <a href="https://www.facebook.com/duovisionsk/" target="_blank" rel="noopener noreferrer" className="text-[#4267B2] hover:text-[#365899] transition-all hover:scale-110" title="Facebook">
-                <Facebook size={22} />
-              </a>
-            </div>
-
-            <div className="flex items-center gap-2 border-l border-border pl-4">
-              <Globe size={18} className="text-gray-400" />
-              <select value={currentLang} onChange={(e) => onLangChange(e.target.value)} className="bg-transparent text-gray-300 text-sm focus:outline-none cursor-pointer">
-                <option value="sk">SK</option>
-                <option value="cz">CZ</option>
-                <option value="en">EN</option>
-                <option value="de">DE</option>
-              </select>
-            </div>
-          </div>
-
-          <button className="lg:hidden text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {/* Hamburger Button */}
+          <button className="lg:hidden text-white z-50 p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
         </div>
-
-        {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-border">
-            <div className="flex flex-col gap-4 mt-4">
-              {navItems.map((item) => (
-                <button key={item.id} onClick={() => scrollToSection(item.id)} className="text-gray-300 text-left">{item.label}</button>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Fullscreen Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 bg-[#020202] z-40 flex flex-col items-center justify-center gap-8">
+          <nav className="flex flex-col items-center gap-6">
+            {navItems.map((item) => (
+              <button 
+                key={item.id} 
+                onClick={() => scrollToSection(item.id)} 
+                className="text-2xl font-bold text-white hover:text-[#FFD700] transition-colors"
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+
+          {/* Socials v mobile */}
+          <div className="flex items-center gap-8 mt-8">
+            <a href="tel:0910151751" className="text-white hover:text-[#FFD700]"><Phone size={28} /></a>
+            <a href="https://www.instagram.com/duovisionstudiosk/" target="_blank" rel="noopener noreferrer" className="text-[#E1306C]"><Instagram size={28} /></a>
+            <a href="https://www.facebook.com/duovisionsk/" target="_blank" rel="noopener noreferrer" className="text-[#4267B2]"><Facebook size={28} /></a>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
