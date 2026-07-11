@@ -21,9 +21,17 @@ const Preloader = ({ onLoadingComplete }) => {
   }, [onLoadingComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#020202]">
-      <img src="/pfp.webp" alt="Logo" className="w-64 h-120 mb-8 animate-pulse" />
-      <div className="text-[#FFD700] font-mono text-xl tracking-[0.2em]">{progress}%</div>
+<div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#020202]">
+      <img 
+        src="/pfp.webp" 
+        alt="DuoVision STUDIO - digitálne riešenia a webdizajn" 
+        width="256" 
+        height="480" 
+        className="w-64 h-[480px] mb-8 animate-pulse" 
+      />
+      <div className="text-[#FFD700] font-mono text-xl tracking-[0.2em]">
+        {progress}%
+      </div>
     </div>
   );
 };

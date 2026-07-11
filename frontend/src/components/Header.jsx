@@ -31,11 +31,17 @@ const Header = ({ translations, currentLang, onLangChange }) => {
 
   return (
     <>
-      {/* HEADER BAR */}
+{/* HEADER BAR */}
       <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${isScrolled ? 'bg-[#020202]/95 backdrop-blur-md border-b border-white/10' : 'bg-transparent'}`}>
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           <div className="cursor-pointer z-[110]" onClick={() => scrollToSection('home')}>
-            <img src="/pfp.webp" alt="Logo" className="h-10 md:h-16 w-auto" />
+            <img 
+              src="/pfp.webp" 
+              alt="Logo DuoVision STUDIO - profesionálna tvorba moderných web stránok" 
+              width="180" 
+              height="64" 
+              className="h-10 md:h-16 w-auto" 
+            />
           </div>
 
           {/* DESKTOP NAV */}
