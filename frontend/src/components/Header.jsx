@@ -31,42 +31,67 @@ const Header = ({ translations, currentLang, onLangChange }) => {
 
   return (
     <>
-{/* HEADER BAR */}
+      {/* HEADER BAR */}
       <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${isScrolled ? 'bg-[#020202]/95 backdrop-blur-md border-b border-white/10' : 'bg-transparent'}`}>
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-          <div className="cursor-pointer z-[110]" onClick={() => scrollToSection('home')}>
+          <div 
+            className="cursor-pointer z-[110]" 
+            onClick={() => scrollToSection('home')} 
+            role="button" 
+            aria-label="Návrat na domovskú stránku"
+          >
             <img 
               src="/pfp.webp" 
               alt="Logo DuoVision STUDIO - profesionálna tvorba moderných web stránok" 
               width="180" 
               height="64" 
-              className="h-10 md:h-16 w-auto" 
+              className="h-10 md:h-16 w-auto aspect-[45/16] object-contain" 
             />
           </div>
 
           {/* DESKTOP NAV */}
           <div className="hidden lg:flex items-center gap-6">
-            <nav className="flex items-center gap-6">
+            <nav className="flex items-center gap-6" aria-label="Hlavná navigácia">
               {navItems.map((item) => (
-                <button key={item.id} onClick={() => scrollToSection(item.id)} className="text-gray-300 hover:text-[#FFD700] transition-colors font-medium text-sm uppercase">
+                <button 
+                  key={item.id} 
+                  onClick={() => scrollToSection(item.id)} 
+                  className="text-gray-300 hover:text-[#FFD700] transition-colors font-medium text-sm uppercase"
+                >
                   {item.label}
                 </button>
               ))}
             </nav>
             <div className="flex items-center gap-4 pl-6 border-l border-white/10">
-              <a href="https://www.instagram.com/duovisionstudiosk/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#E1306C]"><Instagram size={20} /></a>
-              <a href="https://www.facebook.com/duovisionsk/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#4267B2]"><Facebook size={20} /></a>
+              <a href="https://www.instagram.com/duovisionstudiosk/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#E1306C]" aria-label="Instagram">
+                <Instagram size={20} />
+              </a>
+              <a href="https://www.facebook.com/duovisionsk/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-[#4267B2]" aria-label="Facebook">
+                <Facebook size={20} />
+              </a>
               <div className="flex items-center gap-1 text-gray-400">
                 <Globe size={16} />
-                <select value={currentLang} onChange={(e) => onLangChange(e.target.value)} className="bg-transparent text-xs font-bold cursor-pointer focus:outline-none">
-                  <option value="sk">SK</option><option value="cz">CZ</option><option value="en">EN</option><option value="de">DE</option>
+                <select 
+                  value={currentLang} 
+                  onChange={(e) => onLangChange(e.target.value)} 
+                  className="bg-transparent text-xs font-bold cursor-pointer focus:outline-none"
+                  aria-label="Výber jazyka"
+                >
+                  <option value="sk">SK</option>
+                  <option value="cz">CZ</option>
+                  <option value="en">EN</option>
+                  <option value="de">DE</option>
                 </select>
               </div>
             </div>
           </div>
 
           {/* MOBILE HAMBURGER */}
-          <button className="lg:hidden text-white z-[110] p-2" onClick={() => setIsMobileMenuOpen(true)}>
+          <button 
+            className="lg:hidden text-white z-[110] p-2" 
+            onClick={() => setIsMobileMenuOpen(true)}
+            aria-label="Otvoriť mobilné menu"
+          >
             <Menu size={30} />
           </button>
         </div>
@@ -75,11 +100,15 @@ const Header = ({ translations, currentLang, onLangChange }) => {
       {/* MOBILE FULLSCREEN MENU */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-[200] bg-[#020202] flex flex-col items-center justify-center gap-8 p-6">
-          <button className="absolute top-6 right-6 text-white p-2" onClick={() => setIsMobileMenuOpen(false)}>
+          <button 
+            className="absolute top-6 right-6 text-white p-2" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Zatvoriť mobilné menu"
+          >
             <X size={40} />
           </button>
           
-          <nav className="flex flex-col items-center gap-6">
+          <nav className="flex flex-col items-center gap-6" aria-label="Mobilná navigácia">
             {navItems.map((item) => (
               <button 
                 key={item.id} 
@@ -92,9 +121,15 @@ const Header = ({ translations, currentLang, onLangChange }) => {
           </nav>
 
           <div className="flex items-center gap-8 mt-4">
-            <a href="tel:0910151751" className="text-white hover:text-[#FFD700]"><Phone size={32} /></a>
-            <a href="https://www.instagram.com/duovisionstudiosk/" target="_blank" rel="noreferrer" className="text-[#E1306C]"><Instagram size={32} /></a>
-            <a href="https://www.facebook.com/duovisionsk/" target="_blank" rel="noreferrer" className="text-[#4267B2]"><Facebook size={32} /></a>
+            <a href="tel:0910151751" className="text-white hover:text-[#FFD700]" aria-label="Zavolať nám">
+              <Phone size={32} />
+            </a>
+            <a href="https://www.instagram.com/duovisionstudiosk/" target="_blank" rel="noreferrer" className="text-[#E1306C]" aria-label="Instagram">
+              <Instagram size={32} />
+            </a>
+            <a href="https://www.facebook.com/duovisionsk/" target="_blank" rel="noreferrer" className="text-[#4267B2]" aria-label="Facebook">
+              <Facebook size={32} />
+            </a>
           </div>
         </div>
       )}

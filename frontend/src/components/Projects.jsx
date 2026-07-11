@@ -8,10 +8,8 @@ const Projects = ({ translations }) => {
   const [activeCategory, setActiveCategory] = useState('Všetky');
   const sectionRef = useRef(null);
 
-  // Definícia kategórií
   const categories = ['Všetky', 'Reštaurácie', 'Penzióny'];
 
-  // Upravené pole projektov o kategóriu
   const allProjects = [
     { title: translations.projects.toscanna.title, description: translations.projects.toscanna.description, image: '/toscana-preview.jpg', link: 'https://toscana-boe4.vercel.app', category: 'Reštaurácie' },
     { title: translations.projects.boccacio.title, description: translations.projects.boccacio.description, image: '/boccacio-preview.jpg', link: 'https://www.boccaccio.sk/', category: 'Reštaurácie' },
@@ -47,12 +45,14 @@ const Projects = ({ translations }) => {
           {translations.projects.title}
         </h2>
 
-        {/* Filtračné tlačidlá */}
+        {/* Filtračné tlačidlá s prístupnosťou */}
         <div className="flex justify-center gap-4 mb-16 flex-wrap">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
+              aria-pressed={activeCategory === cat}
+              aria-label={`Zobraziť kategóriu ${cat}`}
               className={`px-6 py-2 rounded-full border transition-all duration-300 font-medium ${
                 activeCategory === cat 
                   ? 'bg-[#FFD700] text-black border-[#FFD700]' 
@@ -67,7 +67,7 @@ const Projects = ({ translations }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {filteredProjects.map((project, index) => (
             <Card
-              key={index}
+              key={project.title}
               className={`group bg-card border-border overflow-hidden backdrop-blur-sm transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#FFD700]/10 ${
                 visibleProjects.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
@@ -75,7 +75,9 @@ const Projects = ({ translations }) => {
               <div className="relative overflow-hidden h-64">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`Ukážka projektu ${project.title}`}
+                  width="400"
+                  height="256"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
@@ -83,9 +85,10 @@ const Projects = ({ translations }) => {
                     variant="outline"
                     className="border-[#FFD700] text-[#FFD700] hover:bg-gradient-to-r hover:from-[#FFD700] hover:to-[#FF8C00] hover:text-black font-semibold transition-all duration-300"
                     onClick={() => window.open(project.link, '_blank')}
+                    aria-label={`Otvoriť webovú stránku projektu ${project.title} v novom okne`}
                   >
                     {translations.projects.viewProject}
-                    <ExternalLink className="ml-2" size={16} />
+                    <ExternalLink className="ml-2" size={16} aria-hidden="true" />
                   </Button>
                 </div>
               </div>

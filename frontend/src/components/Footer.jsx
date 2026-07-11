@@ -7,18 +7,18 @@ const Footer = ({ translations }) => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Logo & Description */}
-           <div>
-            <img
-              src="./pfp.webp"
-              alt="Logo DuoVision STUDIO"
-              width="64"
-              height="64"
-              className="h-16 w-auto mb-4"
+          <div>
+             <img
+                src="/pfp.webp"
+               alt="DuoVision STUDIO - tvorba moderných webových stránok"
+               width="200" 
+               height="80" 
+               className="h-16 w-auto mb-4 object-contain"
             />
-            <p className="text-gray-400 text-sm font-light">
-              Web Design & Digital Solutions
-            </p>
-          </div>
+          <p className="text-gray-400 text-sm font-light">
+             Web Design & Digital Solutions
+       </p>
+         </div>
 
           {/* Quick Links */}
           <div>

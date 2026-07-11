@@ -39,11 +39,12 @@ const ProjectsCarousel = ({ translations }) => {
           </h2>
 
           {/* Filtračné tlačidlá */}
-          <div className="flex justify-center gap-3 mb-16 flex-wrap">
+          <div className="flex justify-center gap-3 mb-16 flex-wrap" role="group" aria-label="Filtrovanie projektov podľa kategórie">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
+                aria-pressed={activeCategory === cat}
                 className={`px-6 py-2 rounded-full border border-white/10 transition-all duration-300 font-medium hover:border-[#FFD700] ${
                   activeCategory === cat 
                     ? 'bg-[#FFD700] text-black shadow-[0_0_15px_rgba(255,215,0,0.3)]' 
@@ -62,12 +63,14 @@ const ProjectsCarousel = ({ translations }) => {
                 key={index} 
                 className="group flex flex-col md:flex-row items-center gap-8 border-b border-white/10 pb-12 last:border-0 transition-all duration-500"
               >
-                {/* Obrázok */}
+                {/* Obrázok s pevným pomerom strán */}
                 <div className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-2xl border border-white/5">
                   <img 
                     src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105" 
+                    alt={`Náhľad webovej stránky projektu: ${project.title}`}
+                    width="600"
+                    height="384"
+                    className="w-full h-64 object-cover aspect-[3/2] transition-transform duration-700 group-hover:scale-105" 
                   />
                 </div>
                 
@@ -86,9 +89,10 @@ const ProjectsCarousel = ({ translations }) => {
                     variant="outline" 
                     className="border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black transition-all"
                     onClick={() => window.open(project.link, '_blank')}
+                    aria-label={`Otvoriť projekt ${project.title} v novom okne`}
                   >
                     {translations.projects.viewProject}
-                    <ExternalLink className="ml-2" size={16} />
+                    <ExternalLink className="ml-2" size={16} aria-hidden="true" />
                   </Button>
                 </div>
               </div>

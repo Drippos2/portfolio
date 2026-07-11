@@ -21,15 +21,15 @@ const Preloader = ({ onLoadingComplete }) => {
   }, [onLoadingComplete]);
 
   return (
-<div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#020202]">
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#020202]">
       <img 
         src="/pfp.webp" 
-        alt="DuoVision STUDIO - digitálne riešenia a webdizajn" 
+        alt="Logo DuoVision STUDIO" 
         width="256" 
         height="480" 
-        className="w-64 h-[480px] mb-8 animate-pulse" 
+        className="w-64 h-[480px] mb-8 animate-pulse object-contain" 
       />
-      <div className="text-[#FFD700] font-mono text-xl tracking-[0.2em]">
+      <div className="text-[#FFD700] font-mono text-xl tracking-[0.2em]" aria-label={`Načítanie: ${progress} percent`}>
         {progress}%
       </div>
     </div>
@@ -55,6 +55,7 @@ const Hero = ({ translations }) => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#020202]">
       
+      {/* BACKGROUND ELEMENTS */}
       <div className="absolute inset-0 opacity-[0.06] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#FFD700 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#FFD700]/5 rounded-full blur-[120px] animate-pulse"></div>
@@ -64,8 +65,7 @@ const Hero = ({ translations }) => {
         <div className={`text-center animate-zoom-in ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
           <div className="relative mb-6">
             
-            {/* KORUNKA */}
-            <div className="flex justify-center mb-2">
+            <div className="flex justify-center mb-2" role="img" aria-label="Korunka ako symbol kvality">
               <Crown 
                 className="text-[#FFD700] animate-pulse drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]" 
                 size={48} 
@@ -97,7 +97,11 @@ const Hero = ({ translations }) => {
               <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700] to-[#FF8C00] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <span className="relative text-[#FFD700] group-hover:text-black font-bold text-lg">{translations.hero.viewProjects}</span>
             </Button>
-            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-[#FFD700] transition-colors duration-300 border-b border-white/20 hover:border-[#FFD700] pb-1">
+            <button 
+              onClick={() => scrollToSection('contact')} 
+              className="text-white hover:text-[#FFD700] transition-colors duration-300 border-b border-white/20 hover:border-[#FFD700] pb-1"
+              aria-label="Prejsť na kontakt"
+            >
               {translations.hero.contact}
             </button>
           </div>
@@ -105,14 +109,14 @@ const Hero = ({ translations }) => {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
-        <ChevronDown size={24} />
+        <ChevronDown size={24} aria-hidden="true" />
       </div>
 
       <style jsx>{`
         @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
-        .animate-zoom-in { animation: zoomIn 0.8s ease-out forwards; }
-        .animate-float { animation: float 4s ease-in-out infinite; }
+        .animate-zoom-in { animation: zoomIn 0.8s ease-out forwards; will-change: transform, opacity; }
+        .animate-float { animation: float 4s ease-in-out infinite; will-change: transform; }
       `}</style>
     </section>
   );

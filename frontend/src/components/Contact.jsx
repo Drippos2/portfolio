@@ -40,11 +40,11 @@ const Contact = ({ translations }) => {
             
             <div className="space-y-6 pt-6">
               {[
-                { icon: Phone, text: '0910 151 751', label: 'Zavolajte nám' },
-                { icon: Mail, text: 'stanislavhubeny660@gmail.com', label: 'Napíšte nám' },
-                { icon: Instagram, text: '@DuoVisionStudio', label: 'Sledujte nás' }
+                { icon: Phone, text: '0910 151 751', label: 'Zavolajte nám', href: 'tel:0910151751' },
+                { icon: Mail, text: 'stanislavhubeny660@gmail.com', label: 'Napíšte nám', href: 'mailto:stanislavhubeny660@gmail.com' },
+                { icon: Instagram, text: '@DuoVisionStudio', label: 'Sledujte nás', href: 'https://www.instagram.com/duovisionstudiosk/' }
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-4 group">
+                <a key={i} href={item.href} className="flex items-center gap-4 group block">
                   <div className="p-4 bg-white/5 rounded-xl group-hover:bg-[#D4AF37]/10 transition-colors">
                     <item.icon className="text-[#D4AF37]" size={24}/>
                   </div>
@@ -52,13 +52,13 @@ const Contact = ({ translations }) => {
                     <p className="text-xs text-gray-500 uppercase tracking-widest">{item.label}</p>
                     <p className="text-white font-medium">{item.text}</p>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
-            {/* Fakturačné údaje - ZLATÝ GRADIENT RÁMČEK */}
+            {/* Fakturačné údaje */}
             <div className="mt-12 p-[1px] rounded-2xl bg-gradient-to-r from-[#D4AF37] via-[#C05621] to-[#975A16] shadow-[0_0_15px_rgba(212,175,55,0.3)]">
-              <div className="p-6 rounded-2xl bg-black/80 flex gap-6 justify-center text-sm font-semibold tracking-wide">
+              <div className="p-6 rounded-2xl bg-black/80 flex flex-col md:flex-row gap-4 justify-center text-sm font-semibold tracking-wide">
                 <span className="flex items-center gap-2 text-white"><Building size={18} className="text-[#D4AF37]"/> IČO: 57587752</span>
                 <span className="flex items-center gap-2 text-white"><FileText size={18} className="text-[#D4AF37]"/> DIČ: 1125211910</span>
               </div>
@@ -71,17 +71,17 @@ const Contact = ({ translations }) => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm text-gray-400 ml-1">Meno</label>
-                    <Input name="name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-[#D4AF37]" required />
+                    <label htmlFor="name" className="text-sm text-gray-400 ml-1">Meno</label>
+                    <Input id="name" name="name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-[#D4AF37]" required />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm text-gray-400 ml-1">Email</label>
-                    <Input name="email" type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-[#D4AF37]" required />
+                    <label htmlFor="email" className="text-sm text-gray-400 ml-1">Email</label>
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-[#D4AF37]" required />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm text-gray-400 ml-1">Správa</label>
-                  <Textarea name="message" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="bg-white/5 border-white/10 text-white min-h-[160px] rounded-xl focus:border-[#D4AF37]" required />
+                  <label htmlFor="message" className="text-sm text-gray-400 ml-1">Správa</label>
+                  <Textarea id="message" name="message" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="bg-white/5 border-white/10 text-white min-h-[160px] rounded-xl focus:border-[#D4AF37]" required />
                 </div>
                 <Button type="submit" className="w-full h-14 bg-[#D4AF37] hover:bg-[#B8860B] text-black font-bold text-lg rounded-xl transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]">
                   Odoslať dopyt <Send className="ml-2" size={18} />

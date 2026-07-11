@@ -38,6 +38,7 @@ const WhyMe = ({ translations }) => {
       }
     }, { threshold: 0.2 });
     if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => { if (sectionRef.current) observer.unobserve(sectionRef.current); };
   }, []);
 
   const reasons = [
@@ -50,32 +51,41 @@ const WhyMe = ({ translations }) => {
   return (
     <section id="why-me" className="py-20 bg-background" ref={sectionRef}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-16 text-center text-white">PREČO SI VYBRAŤ NÁS?</h2>
+        <h2 className="text-4xl font-bold mb-16 text-center text-white" aria-level="2">PREČO SI VYBRAŤ NÁS?</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-20">
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (
               <Card key={index} className={`bg-card/40 border-border p-4 transition-all ${visibleCards.includes(index) ? 'opacity-100' : 'opacity-0'}`}>
-                <CardHeader className="text-center p-2"><Icon size={32} className="mx-auto mb-2 text-primary" /><CardTitle className="text-lg text-white">{reason.title}</CardTitle></CardHeader>
+                <CardHeader className="text-center p-2">
+                  <Icon size={32} className="mx-auto mb-2 text-primary" aria-hidden="true" />
+                  <CardTitle className="text-lg text-white">{reason.title}</CardTitle>
+                </CardHeader>
               </Card>
             );
           })}
         </div>
 
-        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent my-12"></div>
+        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent my-12" role="separator"></div>
 
         <div className="flex flex-wrap justify-center gap-6">
           {projects.map((p, i) => (
-            <div key={i} onClick={() => setSelectedProject(p)} className="cursor-pointer bg-card border border-border p-4 rounded-xl w-56 text-center hover:border-[#D4AF37] transition-all hover:scale-105 group relative">
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center border-2 border-background animate-pulse">
+            <div 
+              key={i} 
+              onClick={() => setSelectedProject(p)} 
+              role="button"
+              aria-label={`Zobraziť detail projektu ${p.title}`}
+              className="cursor-pointer bg-card border border-border p-4 rounded-xl w-56 text-center hover:border-[#D4AF37] transition-all hover:scale-105 group relative"
+            >
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center border-2 border-background animate-pulse" aria-hidden="true">
                 <AlertCircle size={14} className="text-white" />
               </div>
               
-              <img src={p.new[0]} alt={`Redizajn projektu ${p.title}`} width="200" height="150" className="rounded-md mb-3 h-24 w-full object-cover" />
+              <img src={p.new[0]} alt={`Hlavný náhľad redizajnu projektu ${p.title}`} width="200" height="150" className="rounded-md mb-3 h-24 w-full object-cover" />
               <div className="flex items-center justify-center gap-2">
                 <h3 className="text-white text-sm font-bold">{p.title}</h3>
-                <ChevronRight size={16} className="text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ChevronRight size={16} className="text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
               </div>
             </div>
           ))}
@@ -83,13 +93,15 @@ const WhyMe = ({ translations }) => {
       </div>
 
       {selectedProject && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
           <div className="bg-background border border-border p-6 rounded-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto relative">
-            <button onClick={() => setSelectedProject(null)} className="absolute top-4 right-4 text-gray-400 hover:text-white"><X size={24}/></button>
+            <button onClick={() => setSelectedProject(null)} className="absolute top-4 right-4 text-gray-400 hover:text-white" aria-label="Zatvoriť detail projektu">
+              <X size={24}/>
+            </button>
             <h2 className="text-2xl text-white font-bold mb-6 text-center">{selectedProject.title}</h2>
             
             <div className="bg-red-950/20 border border-red-500/30 p-4 rounded-lg mb-8 relative">
-              <div className="absolute -top-3 left-4 bg-red-600 text-white text-[10px] px-2 py-0.5 rounded font-bold uppercase flex items-center gap-1">
+              <div className="absolute -top-3 left-4 bg-red-600 text-white text-[10px] px-2 py-0.5 rounded font-bold uppercase flex items-center gap-1" aria-hidden="true">
                 <AlertCircle size={12}/> Problém
               </div>
               <ul className="text-gray-200 text-xs list-disc pl-4 space-y-2 mt-2">
@@ -101,11 +113,15 @@ const WhyMe = ({ translations }) => {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <p className="text-[10px] text-gray-500 uppercase mb-2">Pôvodný stav</p>
-                <div className="grid grid-cols-2 gap-1">{selectedProject.old.map((img, i) => <img key={i} src={img} alt="Pôvodný stav webu" width="100" height="100" onClick={() => setZoomedImage(img)} className="cursor-pointer h-16 w-full object-cover rounded hover:opacity-80" />)}</div>
+                <div className="grid grid-cols-2 gap-1">
+                  {selectedProject.old.map((img, i) => <img key={i} src={img} alt={`Pôvodný stav webu ${i + 1}`} width="100" height="100" onClick={() => setZoomedImage(img)} className="cursor-pointer h-16 w-full object-cover rounded hover:opacity-80" />)}
+                </div>
               </div>
               <div>
                 <p className="text-[10px] text-gray-500 uppercase mb-2">Redizajn</p>
-                <div className="grid grid-cols-2 gap-1">{selectedProject.new.map((img, i) => <img key={i} src={img} alt="Nový dizajn webu" width="100" height="100" onClick={() => setZoomedImage(img)} className="cursor-pointer h-16 w-full object-cover rounded hover:opacity-80" />)}</div>
+                <div className="grid grid-cols-2 gap-1">
+                  {selectedProject.new.map((img, i) => <img key={i} src={img} alt={`Nový dizajn webu ${i + 1}`} width="100" height="100" onClick={() => setZoomedImage(img)} className="cursor-pointer h-16 w-full object-cover rounded hover:opacity-80" />)}
+                </div>
               </div>
             </div>
           </div>
@@ -113,7 +129,7 @@ const WhyMe = ({ translations }) => {
       )}
 
       {zoomedImage && (
-        <div className="fixed inset-0 bg-black/95 z-[60] flex items-center justify-center p-4" onClick={() => setZoomedImage(null)}>
+        <div className="fixed inset-0 bg-black/95 z-[60] flex items-center justify-center p-4" onClick={() => setZoomedImage(null)} role="presentation">
           <img src={zoomedImage} alt="Zväčšený náhľad projektu" width="800" height="600" className="max-h-[85vh] max-w-[85vw] object-contain rounded" />
         </div>
       )}
