@@ -1,17 +1,16 @@
 # DuoVision STUDIO
-DuoVision STUDIO je profesionálne digitálne štúdio zamerané na tvorbu moderných webových stránok, SEO optimalizáciu a digitálny marketing.
+Tvoríme moderné, rýchle a responzívne webové stránky pre reštaurácie, penzióny a firmy.
 
-## Webové stránky
-Naše webové stránky sú rýchle, optimalizované a plne responzívne.
-- [Domov](https://www.duovision.sk)
-- [Prečo si vybrať nás?](https://www.duovision.sk/#why-me)
+## Naše služby
+- Tvorba webových stránok na mieru
+- Optimalizácia pre vyhľadávače (SEO)
+- Rýchlosť a responzivita (mobile-first)
+
+## Projekty
+- Toscanna: Web pre reštauráciu
+- Boccaccio: Web pre reštauráciu
+- Penzión Kastelán: Web pre penzión
+- Penzión Štrba: Web pre penzión
 
 ## Kontakt
-- Web: [https://www.duovision.sk](https://www.duovision.sk)
-- Email: stanislavhubeny660@gmail.com
-- Telefón: 0910 151 751
-
-## Služby
-- Tvorba webov na mieru
-- SEO optimalizácia
-- Správa a údržba webov
+Viac informácií nájdete na našom webe: https://www.duovision.sk
