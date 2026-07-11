@@ -11,9 +11,9 @@ const Projects = ({ translations }) => {
   const categories = ['Všetky', 'Reštaurácie', 'Penzióny'];
 
   const allProjects = [
-    { title: translations.projects.toscanna.title, description: translations.projects.toscanna.description, image: '/toscana-preview.jpg', link: 'https://toscana-boe4.vercel.app', category: 'Reštaurácie' },
-    { title: translations.projects.boccacio.title, description: translations.projects.boccacio.description, image: '/boccacio-preview.jpg', link: 'https://www.boccaccio.sk/', category: 'Reštaurácie' },
-    { title: translations.projects.penzionstrba.title, description: translations.projects.penzionstrba.description, image: '/penzion-strba-preview.jpg', link: 'https://www.penzion-strba.sk/', category: 'Penzióny' }
+    { title: translations.projects.toscanna.title, description: translations.projects.toscanna.description, image: '/toscana-preview.webp', link: 'https://toscana-boe4.vercel.app', category: 'Reštaurácie' },
+    { title: translations.projects.boccacio.title, description: translations.projects.boccacio.description, image: '/boccacio-preview.webp', link: 'https://www.boccaccio.sk/', category: 'Reštaurácie' },
+    { title: translations.projects.penzionstrba.title, description: translations.projects.penzionstrba.description, image: '/penzion-strba-preview.webp', link: 'https://www.penzion-strba.sk/', category: 'Penzióny' }
   ];
 
   const filteredProjects = activeCategory === 'Všetky' 

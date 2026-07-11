@@ -10,10 +10,10 @@ const ProjectsCarousel = ({ translations }) => {
   const categories = ['Všetky', 'Reštaurácie', 'Penzióny', 'Ostatné'];
 
   const projects = [
-    { title: translations.projects.toscanna.title, description: translations.projects.toscanna.description, image: '/toscana-preview.jpg', link: 'https://toscana-boe4.vercel.app', category: 'Reštaurácie' },
-    { title: translations.projects.boccacio.title, description: translations.projects.boccacio.description, image: '/boccaccio-preview.jpg', link: 'https://boccaccio.sk', category: 'Reštaurácie' },
-    { title: translations.projects.kastelan.title, description: translations.projects.kastelan.description, image: '/kastelan-preview.jpg', link: 'https://www.penzionkastelan.sk/', category: 'Penzióny' },
-    { title: translations.projects.penzionstrba.title, description: translations.projects.penzionstrba.description, image: '/penzion-strba-preview.jpg', link: 'https://www.penzion-strba.sk/', category: 'Penzióny' }
+    { title: translations.projects.toscanna.title, description: translations.projects.toscanna.description, image: '/toscana-preview.webp', link: 'https://toscana-boe4.vercel.app', category: 'Reštaurácie' },
+    { title: translations.projects.boccacio.title, description: translations.projects.boccacio.description, image: '/boccaccio-preview.webp', link: 'https://boccaccio.sk', category: 'Reštaurácie' },
+    { title: translations.projects.kastelan.title, description: translations.projects.kastelan.description, image: '/kastelan-preview.webp', link: 'https://www.penzionkastelan.sk/', category: 'Penzióny' },
+    { title: translations.projects.penzionstrba.title, description: translations.projects.penzionstrba.description, image: '/penzion-strba-preview.webp', link: 'https://www.penzion-strba.sk/', category: 'Penzióny' }
   ];
 
   const filteredProjects = activeCategory === 'Všetky' 
