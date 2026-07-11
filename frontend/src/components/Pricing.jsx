@@ -11,7 +11,6 @@ const Pricing = ({ translations }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Zvýšil som počet indexov pre istotu
           [0, 1, 2, 3, 4, 5, 6, 7].forEach((index) => {
             setTimeout(() => {
               setVisibleCards((prev) => [...prev, index]);
@@ -41,12 +40,11 @@ const Pricing = ({ translations }) => {
 
   const PlanCard = ({ plan, index }) => (
     <Card
-      className={`group relative border backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] 
-        ${plan.highlighted ? 'border-[#FFD700]/50 bg-gradient-to-b from-[#1a1708] to-card shadow-2xl shadow-[#FFD700]/20' : 'border-border bg-card'}
+      className={`group relative border border-white/10 bg-card/50 backdrop-blur-md transition-all duration-500 hover:scale-[1.05] hover:shadow-[0_0_30px_rgba(255,215,0,0.2)] 
+        ${plan.highlighted ? 'border-[#FFD700]/50 bg-gradient-to-b from-[#1a1708] to-card border-2 shadow-2xl shadow-[#FFD700]/30' : ''}
         ${visibleCards.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}
       `}
     >
-      {/* Korunky a Badge pre VIP */}
       {plan.isVip && (
         <>
           <div className="absolute -top-6 left-4 z-20 animate-bounce"><Crown className="text-[#FFD700] w-8 h-8 drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]" /></div>
@@ -61,28 +59,28 @@ const Pricing = ({ translations }) => {
       
       {!plan.isVip && plan.highlighted && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-          <Badge className="bg-gradient-to-r from-[#FFD700] to-[#FF8C00] text-black font-bold px-4 py-1 border-0 shadow-lg shadow-[#FFD700]/20 uppercase text-xs">
+          <Badge className="bg-gradient-to-r from-[#FFD700] to-[#FF8C00] text-black font-bold px-6 py-1 border-0 shadow-lg shadow-[#FFD700]/30 uppercase text-xs">
             Populárna voľba
           </Badge>
         </div>
       )}
       
-      <CardHeader className="text-center pt-8">
-        <CardTitle className={`text-xl md:text-2xl mb-4 ${plan.highlighted ? 'text-[#FFD700]' : 'text-white'}`}>
+      <CardHeader className="text-center pt-10 pb-6">
+        <CardTitle className={`text-2xl md:text-3xl mb-4 font-bold ${plan.highlighted ? 'text-[#FFD700]' : 'text-white'}`}>
           {plan.title}
         </CardTitle>
         <div className="mb-2">
-          <span className="text-3xl font-bold text-white">{plan.price}</span>
-          {plan.period && <span className="text-gray-400 text-sm ml-1">{plan.period}</span>}
+          <span className="text-4xl font-black text-white">{plan.price}</span>
+          {plan.period && <span className="text-gray-400 text-base ml-2">{plan.period}</span>}
         </div>
       </CardHeader>
       
-      <CardContent>
-        <ul className="space-y-3">
+      <CardContent className="px-8 pb-10">
+        <ul className="space-y-4">
           {plan.features.map((feature, fIndex) => (
-            <li key={fIndex} className="flex items-start gap-2 text-gray-300">
-              <Check size={18} className="text-[#FFD700] flex-shrink-0 mt-0.5" />
-              <span className="text-sm">{feature}</span>
+            <li key={fIndex} className="flex items-start gap-3 text-gray-200">
+              <Check size={20} className="text-[#FFD700] flex-shrink-0 mt-0.5" />
+              <span className="text-base font-medium">{feature}</span>
             </li>
           ))}
         </ul>
