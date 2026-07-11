@@ -32,7 +32,8 @@ const ProjectsCarousel = ({ translations }) => {
   return (
     <section id="projects" className="py-20 bg-background" ref={sectionRef}>
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className={`transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        {/* Pridané min-h pre CLS fix */}
+        <div className={`min-h-[800px] transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           
           <h2 className="text-4xl md:text-6xl font-bold mb-10 text-center bg-gradient-to-r from-[#FFD700] to-[#FF8C00] bg-clip-text text-transparent" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
             {translations.projects.title}
@@ -63,18 +64,16 @@ const ProjectsCarousel = ({ translations }) => {
                 key={index} 
                 className="group flex flex-col md:flex-row items-center gap-8 border-b border-white/10 pb-12 last:border-0 transition-all duration-500"
               >
-                {/* Obrázok s pevným pomerom strán */}
                 <div className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-2xl border border-white/5">
                   <img 
                     src={project.image} 
-                    alt={`Náhľad webovej stránky projektu: ${project.title}`}
+                    alt={`Náhľad webovej stránky: ${project.title}`}
                     width="600"
-                    height="384"
+                    height="400"
                     className="w-full h-64 object-cover aspect-[3/2] transition-transform duration-700 group-hover:scale-105" 
                   />
                 </div>
                 
-                {/* Info časť */}
                 <div className="w-full md:w-1/2 space-y-4">
                   <span className="text-[#FFD700] font-bold tracking-widest text-xs uppercase border-l-2 border-[#FFD700] pl-3">
                     {project.category}
@@ -89,7 +88,7 @@ const ProjectsCarousel = ({ translations }) => {
                     variant="outline" 
                     className="border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black transition-all"
                     onClick={() => window.open(project.link, '_blank')}
-                    aria-label={`Otvoriť projekt ${project.title} v novom okne`}
+                    aria-label={`Zobraziť detail projektu ${project.title}`}
                   >
                     {translations.projects.viewProject}
                     <ExternalLink className="ml-2" size={16} aria-hidden="true" />
