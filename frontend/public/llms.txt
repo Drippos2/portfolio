@@ -1,13 +1,17 @@
 # DuoVision STUDIO
-DuoVision STUDIO je profesionálne digitálne štúdio zamerané na tvorbu moderných webových stránok.
+DuoVision STUDIO je profesionálne digitálne štúdio zamerané na tvorbu moderných webových stránok, SEO optimalizáciu a digitálny marketing.
 
-## Služby
-- Tvorba webových stránok na mieru (firemné weby, portfóliá, e-shopy).
-- SEO optimalizácia pre vyhľadávače.
-- Správa a údržba webov (balíčky DuoVision VIP).
-- Digitálny branding a vizuálna identita.
+## Webové stránky
+Naše webové stránky sú rýchle, optimalizované a plne responzívne.
+- [Domov](https://www.duovision.sk)
+- [Prečo si vybrať nás?](https://www.duovision.sk/#why-me)
 
 ## Kontakt
-- Web: https://www.duovision.sk
-- Telefonický kontakt: 0910 151 751
+- Web: [https://www.duovision.sk](https://www.duovision.sk)
 - Email: stanislavhubeny660@gmail.com
+- Telefón: 0910 151 751
+
+## Služby
+- Tvorba webov na mieru
+- SEO optimalizácia
+- Správa a údržba webov
