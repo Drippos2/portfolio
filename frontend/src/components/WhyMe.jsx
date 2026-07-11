@@ -8,26 +8,38 @@ const WhyMe = ({ translations }) => {
   const [zoomedImage, setZoomedImage] = useState(null);
   const sectionRef = useRef(null);
 
-  const projects = [
-    {
-      title: "Boccaccio Restaurant",
-      problems: ["Zastaralý dizajn z roku 2017", "Web sa nezobrazoval správne na mobiloch", "Zložitá správa denného menu"],
-      old: ["/bc1s.webp", "/bc2s.webp", "/bc3s.webp"],
-      new: ["/bc1n.webp", "/bc2n.webp", "/bc3n.webp", "/bc4n.webp", "/bc5n.webp", "/bc6n.webp", "/bc7n.webp", "/bc8n.webp", "/bc9n.webp"]
-    },
-    {
-      title: "Penzion Kastelán",
-      problems: ["Pomalé načítanie stránky", "Nekonzistentný vizuálny štýl", "Chýbajúce moderné CTA prvky"],
-      old: ["/k1s.webp", "/k2s.webp", "/k3s.webp"],
-      new: ["/k1n.webp", "/k2n.webp", "/k3n.webp", "/k4n.webp"]
-    },
-    {
-      title: "Penzion Štrba",
-      problems: ["Zlá používateľská skúsenosť (UX)", "Ťažká orientácia pre návštevníka", "Web nebudil dôveryhodný dojem"],
-      old: ["/š1s.webp", "/š2s.webp", "/š3s.webp"],
-      new: ["/š1n.webp", "/š2n.webp", "/š3n.webp", "/š4n.webp"]
-    }
-  ];
+const projects = [
+  {
+    title: "Boccaccio Restaurant",
+    problems: ["Zastaralý dizajn z roku 2017", "Web sa nezobrazoval správne na mobiloch", "Zložitá správa denného menu"],
+    old: ["/bc1s.webp", "/bc2s.webp", "/bc3s.webp"],
+    new: ["/bc1n.webp", "/bc2n.webp", "/bc3n.webp", "/bc4n.webp", "/bc5n.webp", "/bc6n.webp", "/bc7n.webp", "/bc8n.webp", "/bc9n.webp"]
+  },
+  {
+    title: "Penzion Kastelán",
+    problems: ["Pomalé načítanie stránky", "Nekonzistentný vizuálny štýl", "Chýbajúce moderné CTA prvky"],
+    old: ["/k1s.webp", "/k2s.webp", "/k3s.webp"],
+    new: ["/k1n.webp", "/k2n.webp", "/k3n.webp", "/k4n.webp"]
+  },
+  {
+    title: "Penzion Štrba",
+    problems: ["Zlá používateľská skúsenosť (UX)", "Ťažká orientácia pre návštevníka", "Web nebudil dôveryhodný dojem"],
+    old: ["/š1s.webp", "/š2s.webp", "/š3s.webp"],
+    new: ["/š1n.webp", "/š2n.webp", "/š3n.webp", "/š4n.webp"]
+  }
+];
+
+// Tu je časť, ktorú vložíš do svojho JSX (tam, kde vykresľuješ tie nové fotky):
+{project.new.map((img, index) => (
+  <img 
+    key={index}
+    src={img} 
+    alt={`Ukážka projektu ${project.title} - moderný webdizajn od DuoVision`} 
+    width="400" 
+    height="300" 
+    className="rounded-md mb-3 h-24 w-full object-cover" 
+  />
+))}
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
