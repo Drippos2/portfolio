@@ -34,7 +34,7 @@ const About = ({ translations }) => {
               <div className="w-full md:w-1/3 flex justify-center">
                 <div className="relative w-48 h-48 md:w-full md:max-w-[250px] md:h-auto aspect-square rounded-full md:rounded-xl overflow-hidden border-2 border-[#D4AF37]/50 shadow-lg shadow-[#D4AF37]/20">
                   <img 
-                    src="/skuska.webp" 
+                    src="/fotka.webp" 
                     alt="Stano - Majiteľ DuoVision"
                     className="w-full h-full object-cover"
                   />
