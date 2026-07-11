@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from './ui/button';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown, Crown } from 'lucide-react';
 
 // --- PRELOADER KOMPONENTA ---
 const Preloader = ({ onLoadingComplete }) => {
@@ -14,7 +14,7 @@ const Preloader = ({ onLoadingComplete }) => {
           setTimeout(onLoadingComplete, 300);
           return 100;
         }
-        return prev + 4; // Rýchlosť načítania
+        return prev + 4;
       });
     }, 40);
     return () => clearInterval(timer);
@@ -55,12 +55,24 @@ const Hero = ({ translations }) => {
       <div className="container mx-auto px-4 relative z-10">
         <div className={`text-center animate-zoom-in ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
           <div className="relative mb-6">
+            
+            {/* KORUNKA */}
+            <div className="flex justify-center mb-2">
+              <Crown 
+                className="text-[#FFD700] animate-pulse drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]" 
+                size={48} 
+                strokeWidth={1.5}
+                style={{ filter: 'drop-shadow(0 0 8px #FFD700)' }}
+              />
+            </div>
+
             <h1 className="text-5xl sm:text-7xl md:text-9xl font-black mb-4 relative inline-block tracking-tighter animate-float" style={{ fontFamily: 'Orbitron, sans-serif' }}>
               <span className="relative inline-block">
                 <span className="bg-gradient-to-b from-[#FFF700] via-[#FFD700] to-[#B8860B] bg-clip-text text-transparent drop-shadow-2xl">DUO</span>
                 <span className="bg-gradient-to-b from-[#FFD700] via-[#FF8C00] to-[#8B4513] bg-clip-text text-transparent drop-shadow-2xl">VISION</span>
               </span>
             </h1>
+            
             <div className="flex items-center justify-center gap-6">
               <div className="h-[2px] w-20 bg-gradient-to-l from-[#FFD700] to-transparent"></div>
               <h2 className="text-xl md:text-3xl font-light tracking-[0.4em] text-white/80 uppercase">Studio</h2>
