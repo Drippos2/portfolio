@@ -38,10 +38,11 @@ const ProjectsCarousel = ({ translations }) => {
             {translations.projects.title}
           </h2>
 
-          <div className="flex justify-center gap-3 mb-16 flex-wrap" role="group" aria-label="Filtrovanie projektov">
+          <div className="flex justify-center gap-3 mb-16 flex-wrap" role="group" aria-label="Filtrovanie projektov podľa kategórie">
             {categories.map((cat) => (
               <button
                 key={cat}
+                type="button"
                 onClick={() => setActiveCategory(cat)}
                 aria-pressed={activeCategory === cat}
                 className={`px-6 py-2 rounded-full border border-white/10 transition-all duration-300 ${
@@ -53,7 +54,6 @@ const ProjectsCarousel = ({ translations }) => {
             ))}
           </div>
           
-          {/* Tu zaisťujeme min-výšku, aby sa obsah pri filtri "netriasol" */}
           <div className="flex flex-col gap-12 min-h-[600px]">
             {filteredProjects.map((project) => (
               <div 
@@ -81,10 +81,10 @@ const ProjectsCarousel = ({ translations }) => {
                     variant="outline" 
                     className="border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-black"
                     onClick={() => window.open(project.link, '_blank')}
-                    aria-label={`Otvoriť ${project.title}`}
+                    aria-label={`Zobraziť detail projektu ${project.title}`}
                   >
-                    {translations.projects.viewProject}
-                    <ExternalLink className="ml-2" size={16} />
+                    <span className="mr-2">{translations.projects.viewProject}</span>
+                    <ExternalLink size={16} aria-hidden="true" />
                   </Button>
                 </div>
               </div>
