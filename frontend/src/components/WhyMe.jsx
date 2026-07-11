@@ -8,38 +8,26 @@ const WhyMe = ({ translations }) => {
   const [zoomedImage, setZoomedImage] = useState(null);
   const sectionRef = useRef(null);
 
-const projects = [
-  {
-    title: "Boccaccio Restaurant",
-    problems: ["Zastaralý dizajn z roku 2017", "Web sa nezobrazoval správne na mobiloch", "Zložitá správa denného menu"],
-    old: ["/bc1s.webp", "/bc2s.webp", "/bc3s.webp"],
-    new: ["/bc1n.webp", "/bc2n.webp", "/bc3n.webp", "/bc4n.webp", "/bc5n.webp", "/bc6n.webp", "/bc7n.webp", "/bc8n.webp", "/bc9n.webp"]
-  },
-  {
-    title: "Penzion Kastelán",
-    problems: ["Pomalé načítanie stránky", "Nekonzistentný vizuálny štýl", "Chýbajúce moderné CTA prvky"],
-    old: ["/k1s.webp", "/k2s.webp", "/k3s.webp"],
-    new: ["/k1n.webp", "/k2n.webp", "/k3n.webp", "/k4n.webp"]
-  },
-  {
-    title: "Penzion Štrba",
-    problems: ["Zlá používateľská skúsenosť (UX)", "Ťažká orientácia pre návštevníka", "Web nebudil dôveryhodný dojem"],
-    old: ["/š1s.webp", "/š2s.webp", "/š3s.webp"],
-    new: ["/š1n.webp", "/š2n.webp", "/š3n.webp", "/š4n.webp"]
-  }
-];
-
-// Tu je časť, ktorú vložíš do svojho JSX (tam, kde vykresľuješ tie nové fotky):
-{project.new.map((img, index) => (
-  <img 
-    key={index}
-    src={img} 
-    alt={`Ukážka projektu ${project.title} - moderný webdizajn od DuoVision`} 
-    width="400" 
-    height="300" 
-    className="rounded-md mb-3 h-24 w-full object-cover" 
-  />
-))}
+  const projects = [
+    {
+      title: "Boccaccio Restaurant",
+      problems: ["Zastaralý dizajn z roku 2017", "Web sa nezobrazoval správne na mobiloch", "Zložitá správa denného menu"],
+      old: ["/bc1s.webp", "/bc2s.webp", "/bc3s.webp"],
+      new: ["/bc1n.webp", "/bc2n.webp", "/bc3n.webp", "/bc4n.webp", "/bc5n.webp", "/bc6n.webp", "/bc7n.webp", "/bc8n.webp", "/bc9n.webp"]
+    },
+    {
+      title: "Penzion Kastelán",
+      problems: ["Pomalé načítanie stránky", "Nekonzistentný vizuálny štýl", "Chýbajúce moderné CTA prvky"],
+      old: ["/k1s.webp", "/k2s.webp", "/k3s.webp"],
+      new: ["/k1n.webp", "/k2n.webp", "/k3n.webp", "/k4n.webp"]
+    },
+    {
+      title: "Penzion Štrba",
+      problems: ["Zlá používateľská skúsenosť (UX)", "Ťažká orientácia pre návštevníka", "Web nebudil dôveryhodný dojem"],
+      old: ["/š1s.webp", "/š2s.webp", "/š3s.webp"],
+      new: ["/š1n.webp", "/š2n.webp", "/š3n.webp", "/š4n.webp"]
+    }
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -80,12 +68,11 @@ const projects = [
         <div className="flex flex-wrap justify-center gap-6">
           {projects.map((p, i) => (
             <div key={i} onClick={() => setSelectedProject(p)} className="cursor-pointer bg-card border border-border p-4 rounded-xl w-56 text-center hover:border-[#D4AF37] transition-all hover:scale-105 group relative">
-              {/* ČERVENÝ PULZUJÚCI INDIKÁTOR */}
               <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-600 rounded-full flex items-center justify-center border-2 border-background animate-pulse">
                 <AlertCircle size={14} className="text-white" />
               </div>
               
-              <img src={p.new[0]} className="rounded-md mb-3 h-24 w-full object-cover" />
+              <img src={p.new[0]} alt={`Redizajn projektu ${p.title}`} width="200" height="150" className="rounded-md mb-3 h-24 w-full object-cover" />
               <div className="flex items-center justify-center gap-2">
                 <h3 className="text-white text-sm font-bold">{p.title}</h3>
                 <ChevronRight size={16} className="text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -99,7 +86,6 @@ const projects = [
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
           <div className="bg-background border border-border p-6 rounded-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto relative">
             <button onClick={() => setSelectedProject(null)} className="absolute top-4 right-4 text-gray-400 hover:text-white"><X size={24}/></button>
-            
             <h2 className="text-2xl text-white font-bold mb-6 text-center">{selectedProject.title}</h2>
             
             <div className="bg-red-950/20 border border-red-500/30 p-4 rounded-lg mb-8 relative">
@@ -112,15 +98,14 @@ const projects = [
             </div>
 
             <h3 className="text-lg text-white font-bold mb-4 text-center">PREROBENÉ: Predtým vs. Potom</h3>
-            
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <p className="text-[10px] text-gray-500 uppercase mb-2">Pôvodný stav</p>
-                <div className="grid grid-cols-2 gap-1">{selectedProject.old.map((img, i) => <img key={i} src={img} onClick={() => setZoomedImage(img)} className="cursor-pointer h-16 w-full object-cover rounded hover:opacity-80" />)}</div>
+                <div className="grid grid-cols-2 gap-1">{selectedProject.old.map((img, i) => <img key={i} src={img} alt="Pôvodný stav webu" width="100" height="100" onClick={() => setZoomedImage(img)} className="cursor-pointer h-16 w-full object-cover rounded hover:opacity-80" />)}</div>
               </div>
               <div>
                 <p className="text-[10px] text-gray-500 uppercase mb-2">Redizajn</p>
-                <div className="grid grid-cols-2 gap-1">{selectedProject.new.map((img, i) => <img key={i} src={img} onClick={() => setZoomedImage(img)} className="cursor-pointer h-16 w-full object-cover rounded hover:opacity-80" />)}</div>
+                <div className="grid grid-cols-2 gap-1">{selectedProject.new.map((img, i) => <img key={i} src={img} alt="Nový dizajn webu" width="100" height="100" onClick={() => setZoomedImage(img)} className="cursor-pointer h-16 w-full object-cover rounded hover:opacity-80" />)}</div>
               </div>
             </div>
           </div>
@@ -129,7 +114,7 @@ const projects = [
 
       {zoomedImage && (
         <div className="fixed inset-0 bg-black/95 z-[60] flex items-center justify-center p-4" onClick={() => setZoomedImage(null)}>
-          <img src={zoomedImage} className="max-h-[85vh] max-w-[85vw] object-contain rounded" />
+          <img src={zoomedImage} alt="Zväčšený náhľad projektu" width="800" height="600" className="max-h-[85vh] max-w-[85vw] object-contain rounded" />
         </div>
       )}
     </section>
