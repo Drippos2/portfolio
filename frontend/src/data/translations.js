@@ -10,7 +10,7 @@ export const translations = {
       contact: 'Kontakt'
     },
     hero: {
-      title: 'Web Dizajn & Digitalné Služby',
+      title: 'Špičkový web, ktorý vás odlíši od konkurencie.',
       subtitle: 'Tvoríme moderné a profesionálne webové stránky, ktoré pomáhajú firmám rásť a budovať silnú online prezentáciu.',
       viewProjects: 'Pozrieť projekty',
       contact: 'Kontaktovať nás'

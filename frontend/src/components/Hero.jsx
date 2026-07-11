@@ -2,135 +2,97 @@ import React, { useEffect, useState } from 'react';
 import { Button } from './ui/button';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 
+// --- PRELOADER KOMPONENTA ---
+const Preloader = ({ onLoadingComplete }) => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(timer);
+          setTimeout(onLoadingComplete, 300);
+          return 100;
+        }
+        return prev + 4; // Rýchlosť načítania
+      });
+    }, 40);
+    return () => clearInterval(timer);
+  }, [onLoadingComplete]);
+
+  return (
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#020202]">
+      <img src="/pfp.webp" alt="Logo" className="w-64 h-120 mb-8 animate-pulse" />
+      <div className="text-[#FFD700] font-mono text-xl tracking-[0.2em]">{progress}%</div>
+    </div>
+  );
+};
+
+// --- HLAVNÁ HERO KOMPONENTA ---
 const Hero = ({ translations }) => {
+  const [loading, setLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
-  }, []);
+    if (!loading) setIsVisible(true);
+  }, [loading]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
+  if (loading) return <Preloader onLoadingComplete={() => setLoading(false)} />;
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-      </div>
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#020202]">
+      
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none" 
+           style={{ backgroundImage: 'radial-gradient(#FFD700 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#FFD700]/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#FF8C00]/5 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className={`text-center transition-all duration-1000 transform ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          {/* Main Title with Advanced Effects */}
-          <div className="relative mb-8">
-            <h1 
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-2 relative inline-block px-2"
-              style={{ 
-                fontFamily: 'Orbitron, sans-serif',
-                letterSpacing: '0.05em'
-              }}
-            >
-              <span className="relative inline-block studio-text">
-                <span className="absolute inset-0 blur-2xl opacity-60" 
-                  style={{
-                    background: 'linear-gradient(135deg, #14b8a6 0%, #8b5cf6 50%, #3b82f6 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}
-                >
-                  DUOVISION
-                </span>
-                <span className="relative" 
-                  style={{
-                    background: 'linear-gradient(135deg, #14b8a6 0%, #8b5cf6 50%, #3b82f6 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    textShadow: '0 0 40px rgba(20, 184, 166, 0.5), 0 0 80px rgba(139, 92, 246, 0.3)'
-                  }}
-                >
-                  DUOVISION
-                </span>
+        <div className={`text-center animate-zoom-in ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="relative mb-6">
+            <h1 className="text-5xl sm:text-7xl md:text-9xl font-black mb-4 relative inline-block tracking-tighter animate-float" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-b from-[#FFF700] via-[#FFD700] to-[#B8860B] bg-clip-text text-transparent drop-shadow-2xl">DUO</span>
+                <span className="bg-gradient-to-b from-[#FFD700] via-[#FF8C00] to-[#8B4513] bg-clip-text text-transparent drop-shadow-2xl">VISION</span>
               </span>
             </h1>
-            
-            <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4">
-              <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-transparent via-teal-400 to-transparent"></div>
-              <h2 
-                className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-wider"
-                style={{ 
-                  fontFamily: 'Orbitron, sans-serif',
-                  background: 'linear-gradient(135deg, #fbbf24 0%, #ef4444 50%, #8b5cf6 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  textShadow: '0 0 40px rgba(251, 191, 36, 0.4), 0 0 60px rgba(239, 68, 68, 0.3)'
-                }}
-              >
-                STUDIO
-              </h2>
-              <div className="h-px w-8 sm:w-16 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+            <div className="flex items-center justify-center gap-6">
+              <div className="h-[2px] w-20 bg-gradient-to-l from-[#FFD700] to-transparent"></div>
+              <h2 className="text-xl md:text-3xl font-light tracking-[0.4em] text-white/80 uppercase">Studio</h2>
+              <div className="h-[2px] w-20 bg-gradient-to-r from-[#FFD700] to-transparent"></div>
             </div>
           </div>
 
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-3 sm:mb-4 font-light px-4" style={{ animationDelay: '0.3s' }}>
+          <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-xl mx-auto leading-relaxed">
             {translations.hero.title}
           </p>
-          <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-12 max-w-3xl mx-auto px-4" style={{ animationDelay: '0.6s' }}>
-            {translations.hero.subtitle}
-          </p>
 
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-1000 delay-700 transform ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
-            <Button
-              size="lg"
-              onClick={() => scrollToSection('projects')}
-              className="bg-gradient-to-r from-teal-500 via-purple-600 to-blue-500 hover:from-teal-600 hover:via-purple-700 hover:to-blue-600 text-white font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/50 border-0"
-            >
-              {translations.hero.viewProjects}
-              <ArrowRight className="ml-2" size={20} />
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button size="lg" onClick={() => scrollToSection('projects')} className="group relative px-8 py-7 bg-transparent border border-[#FFD700]/30 hover:border-[#FFD700] transition-all duration-500 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700] to-[#FF8C00] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span className="relative text-[#FFD700] group-hover:text-black font-bold text-lg">{translations.hero.viewProjects}</span>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection('contact')}
-              className="border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-black font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-400/50"
-            >
+            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-[#FFD700] transition-colors duration-300 border-b border-white/20 hover:border-[#FFD700] pb-1">
               {translations.hero.contact}
-            </Button>
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronDown size={32} className="text-gray-500" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
+        <ChevronDown size={24} />
       </div>
 
       <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-        
-        .studio-text {
-          animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-          0% { background-position: -1000px 0; }
-          100% { background-position: 1000px 0; }
-        }
+        @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+        .animate-zoom-in { animation: zoomIn 0.8s ease-out forwards; }
+        .animate-float { animation: float 4s ease-in-out infinite; }
       `}</style>
     </section>
   );

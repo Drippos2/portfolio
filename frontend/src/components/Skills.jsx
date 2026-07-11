@@ -51,9 +51,9 @@ const Skills = ({ translations }) => {
         <span className="text-white font-medium">{name}</span>
         <span className="text-gray-400">{animatedValues[name] || 0}%</span>
       </div>
-      <div className="h-3 bg-gray-800 rounded-full overflow-hidden">
+      <div className="h-3 bg-background rounded-full overflow-hidden border border-border">
         <div
-          className="h-full bg-gradient-to-r from-teal-500 via-purple-600 to-blue-500 rounded-full transition-all duration-1000 ease-out"
+          className="h-full bg-gradient-to-r from-[#FFD700] to-[#FF8C00] rounded-full transition-all duration-1000 ease-out"
           style={{ width: `${animatedValues[name] || 0}%` }}
         ></div>
       </div>
@@ -61,15 +61,15 @@ const Skills = ({ translations }) => {
   );
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-b from-gray-900 to-black" ref={sectionRef}>
+    <section id="skills" className="py-20 bg-background" ref={sectionRef}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-16 text-center bg-gradient-to-r from-teal-400 to-purple-400 bg-clip-text text-transparent" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-16 text-center bg-gradient-to-r from-[#FFD700] to-[#FF8C00] bg-clip-text text-transparent" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
           {translations.skills.title}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Technologies */}
           <Card
-            className={`bg-gray-900/50 border-gray-800 backdrop-blur-sm transition-all duration-700 ${
+            className={`bg-card border-border backdrop-blur-sm transition-all duration-700 ${
               visibleSkills.includes(0) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
             }`}
           >
@@ -83,7 +83,7 @@ const Skills = ({ translations }) => {
 
           {/* Expertise */}
           <Card
-            className={`bg-gray-900/50 border-gray-800 backdrop-blur-sm transition-all duration-700 ${
+            className={`bg-card border-border backdrop-blur-sm transition-all duration-700 ${
               visibleSkills.includes(1) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
             }`}
           >
