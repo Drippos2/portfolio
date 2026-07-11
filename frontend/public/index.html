@@ -4,36 +4,34 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <!-- SEO: Metapopis pre vyhľadávače -->
+    <!-- SEO: Metapopis -->
     <meta name="description" content="DuoVision STUDIO - Profesionálna tvorba webových stránok. Tvoríme moderné, rýchle a responzívne weby, ktoré vás odlíšia od konkurencie. Vaša cesta k digitálnemu úspechu." />
     
-    <!-- SEO: Open Graph pre zdieľanie na sociálnych sieťach -->
+    <!-- SEO: Open Graph -->
     <meta property="og:title" content="DuoVision | STUDIO - Profesionálna tvorba web stránok" />
     <meta property="og:description" content="Tvorba moderných webových stránok pre firmy a podniky." />
     <meta property="og:type" content="website" />
-    
     <meta name="theme-color" content="#000000" />
     
-    <!-- Title -->
     <title>DuoVision | STUDIO - Profesionálna tvorba web stránok</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/pfp.webp">
     
-    <!-- Fonty s optimalizáciou -->
+    <!-- Optimalizácia zdrojov -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     
-    <!-- Globálne štýly pre fonty (pridané pre display: swap) -->
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        font-display: swap;
+        font-display: swap; /* Fix pre render-blocking text */
+        margin: 0;
       }
     </style>
     
-    <!-- Zabezpečenie proti chybám -->
+    <!-- Error handling pre PerformanceServerTiming -->
     <script>
       window.addEventListener("error", function(e) {
         if (e.error instanceof DOMException && e.error.name === "DataCloneError" && e.message && e.message.includes("PerformanceServerTiming")) {
@@ -47,7 +45,7 @@
     <noscript>Pre správne fungovanie stránky DuoVision STUDIO povoľte JavaScript.</noscript>
     <div id="root"></div>
 
-    <!-- Posthog Analytics -->
+    <!-- Posthog Analytics (presunuté na koniec pre rýchlejšie načítanie stránky) -->
     <script>
         !(function (t, e) {
             var o, n, p, r;
