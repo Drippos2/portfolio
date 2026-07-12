@@ -71,8 +71,8 @@ const WhyMe = ({ translations }) => {
   return (
     <section id="why-me" className="py-20 bg-background" ref={sectionRef}>
       <div className="container mx-auto px-4">
-        {/* Nadpis so šampiónovou zlatou farbou a skákajúcou animáciou */}
-        <h2 className="text-4xl font-bold mb-16 text-center flex justify-center" aria-level="2">
+        {/* Nadpis so šampiónovou zlatou farbou a skákajúcou animáciou - zmenšená veľkosť */}
+        <h2 className="text-3xl font-bold mb-16 text-center flex justify-center" aria-level="2">
           {titleText.split("").map((char, index) => (
             <span 
               key={index} 
