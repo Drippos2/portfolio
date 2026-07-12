@@ -66,15 +66,22 @@ const WhyMe = ({ translations }) => {
     { icon: Palette, title: translations.whyMe.modern.title }
   ];
 
+  const titleText = "PREČO SI VYBRAŤ NÁS?";
+
   return (
     <section id="why-me" className="py-20 bg-background" ref={sectionRef}>
       <div className="container mx-auto px-4">
-        {/* Pridaný glow efekt na nadpis */}
-        <h2 
-          className="text-4xl font-bold mb-16 text-center text-white drop-shadow-[0_0_10px_rgba(212,175,55,0.5)] bg-gradient-to-r from-white via-yellow-200 to-yellow-500 bg-clip-text text-transparent" 
-          aria-level="2"
-        >
-          PREČO SI VYBRAŤ NÁS?
+        {/* Glow efekt a skákajúce písmená */}
+        <h2 className="text-4xl font-bold mb-16 text-center flex justify-center drop-shadow-[0_0_10px_rgba(212,175,55,0.5)]" aria-level="2">
+          {titleText.split("").map((char, index) => (
+            <span 
+              key={index} 
+              className="inline-block animate-bounce bg-gradient-to-r from-white via-yellow-200 to-yellow-500 bg-clip-text text-transparent"
+              style={{ animationDelay: `${index * 0.1}s`, animationDuration: '2s' }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-20">
@@ -105,7 +112,6 @@ const WhyMe = ({ translations }) => {
                 className="cursor-pointer bg-card border border-border p-4 rounded-xl w-56 text-center hover:border-[#D4AF37] transition-all hover:scale-105 group relative"
               >
                 {!isSeen ? (
-                  // Pridaná trieda animate-bounce pre skákanie
                   <div className="absolute -top-3 -right-3 z-10 flex flex-col items-center animate-bounce">
                     <div className="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center border-2 border-background">
                       <AlertCircle size={14} className="text-white" />
