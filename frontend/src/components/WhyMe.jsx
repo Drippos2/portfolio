@@ -93,7 +93,7 @@ const WhyMe = ({ translations }) => {
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (
-              <Card key={index} className={`bg-card/40 border-border p-4 transition-all duration-300 hover:scale-105 hover:border-[#D4AF37] hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] ${visibleCards.includes(index) ? 'opacity-100' : 'opacity-0'}`}>
+              <Card key={index} className={`bg-card/40 border-border p-4 transition-all duration-300 animate-pulse ${visibleCards.includes(index) ? 'opacity-100' : 'opacity-0'}`}>
                 <CardHeader className="text-center p-2">
                   <Icon size={32} className="mx-auto mb-2 text-primary" aria-hidden="true" />
                   <CardTitle className="text-lg text-white">{reason.title}</CardTitle>
