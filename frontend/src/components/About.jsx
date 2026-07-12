@@ -73,7 +73,7 @@ const About = ({ translations }) => {
               <div className="w-full md:w-2/3 space-y-4 text-center md:text-left">
                 <h2 className="text-3xl font-bold text-white">Ahoj, som Stano</h2>
                 <p className="text-gray-300 leading-relaxed">
-                  {translations.about.description}
+                  Som 19-ročný nadšenec pre technológie zo Žiliny. K počítačom som mal blízko odmalička, no zlom nastal v mojich 15 rokoch, kedy som napísal svoje prvé riadky kódu. Odvtedy sa neustále vzdelávam a pretransformoval som svoju vášeň do profesionálnych riešení. Dnes pomáham firmám naplno využiť potenciál webu, spravovať sociálne siete a tvoriť digitálnu identitu, ktorá má zmysel.
                 </p>
               </div>
             </div>
@@ -95,15 +95,6 @@ const About = ({ translations }) => {
               <div className="text-3xl font-black text-[#FFD700] mb-1">{billingPercent}%</div>
               <div className="text-xs font-bold text-gray-400 tracking-widest uppercase">OFICIÁLNA FAKTURÁCIA</div>
             </div>
-          </div>
-
-          {/* Nový pridaný rámček */}
-          <div className="bg-[#1a1a1a] border border-[#333] p-8 rounded-xl shadow-lg">
-            <p className="text-gray-200 leading-relaxed text-center">
-              Sme web designeri zameraní na tvorbu moderných a profesionálnych webových stránok. 
-              Pomáhame firmám zlepšiť ich online prezentáciu pomocou kvalitného dizajnu, funkčnosti a dobrého používateľského zážitku. 
-              Taktiež vám vieme spravovať sociálne siete, prípadne dokážeme vám zostrihať videá. Či vytvoriť vaše vlastné logo alebo banner pre vašu značku.
-            </p>
           </div>
           
         </div>
