@@ -8,9 +8,9 @@ const Preloader = ({ onLoadingComplete }) => {
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) { clearInterval(timer); setTimeout(onLoadingComplete, 300); return 100; }
-        return prev + 4;
+        return prev + 6; // Zvýšený prírastok pre rýchlejší priebeh
       });
-    }, 40);
+    }, 20); // Skrátený interval na 20ms pre vyššiu plynulosť
     return () => clearInterval(timer);
   }, [onLoadingComplete]);
 
