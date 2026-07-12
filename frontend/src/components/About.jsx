@@ -6,12 +6,11 @@ const About = ({ translations }) => {
   const [billingPercent, setBillingPercent] = useState(0);
   const sectionRef = useRef(null);
 
-  // Animácia oboch počítadiel nastavená na 5 sekúnd
+  // Animácia počítadiel
   useEffect(() => {
     if (isVisible) {
-      const duration = 5000; // 5 sekúnd
+      const duration = 5000;
       
-      // Počítadlo projektov (0 -> 4)
       const projectEnd = 4;
       const projectStepTime = Math.floor(duration / projectEnd);
       const projectTimer = setInterval(() => {
@@ -22,7 +21,6 @@ const About = ({ translations }) => {
         });
       }, projectStepTime);
 
-      // Počítadlo fakturácie (0 -> 100)
       const billingEnd = 100;
       const billingStepTime = Math.floor(duration / billingEnd);
       const billingTimer = setInterval(() => {
@@ -64,6 +62,7 @@ const About = ({ translations }) => {
             {translations.about.title}
           </h2>
           
+          {/* Hlavný profilový box */}
           <div className="mb-8 p-[2px] bg-gradient-to-br from-[#FFD700] to-[#FF8C00] rounded-2xl shadow-xl">
             <div className="bg-[#111] p-8 rounded-2xl flex flex-col md:flex-row items-center gap-10">
               <div className="w-full md:w-1/3 flex justify-center">
@@ -80,7 +79,8 @@ const About = ({ translations }) => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Štatistiky */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <div className="bg-[#1a1a1a] border border-[#333] p-6 rounded-xl text-center">
               <div className="text-3xl font-black text-[#FFD700] mb-1">ZADARMO</div>
               <div className="text-xs font-bold text-gray-400 tracking-widest uppercase">PRVÝ NÁVRH</div>
@@ -95,6 +95,15 @@ const About = ({ translations }) => {
               <div className="text-3xl font-black text-[#FFD700] mb-1">{billingPercent}%</div>
               <div className="text-xs font-bold text-gray-400 tracking-widest uppercase">OFICIÁLNA FAKTURÁCIA</div>
             </div>
+          </div>
+
+          {/* Nový pridaný rámček */}
+          <div className="bg-[#1a1a1a] border border-[#333] p-8 rounded-xl shadow-lg">
+            <p className="text-gray-200 leading-relaxed text-center">
+              Sme web designeri zameraní na tvorbu moderných a profesionálnych webových stránok. 
+              Pomáhame firmám zlepšiť ich online prezentáciu pomocou kvalitného dizajnu, funkčnosti a dobrého používateľského zážitku. 
+              Taktiež vám vieme spravovať sociálne siete, prípadne dokážeme vám zostrihať videá. Či vytvoriť vaše vlastné logo alebo banner pre vašu značku.
+            </p>
           </div>
           
         </div>
