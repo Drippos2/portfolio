@@ -66,7 +66,7 @@ const Hero = ({ translations }) => {
               <Users className="mr-2" size={18} /> O nás
             </Button>
             
-            <Button variant="outline" onClick={() => scrollToSection('whyme')} className="border-white/30 hover:border-[#FFD700] text-white hover:text-[#FFD700] h-14 bg-white/5 hover:bg-white/10 transition-all">
+            <Button variant="outline" onClick={() => scrollToSection('why-me')} className="border-white/30 hover:border-[#FFD700] text-white hover:text-[#FFD700] h-14 bg-white/5 hover:bg-white/10 transition-all">
               <Briefcase className="mr-2" size={18} /> Ako sme pomohli
             </Button>
             
