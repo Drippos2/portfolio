@@ -73,7 +73,7 @@ const About = ({ translations }) => {
               <div className="w-full md:w-2/3 space-y-4 text-center md:text-left">
                 <h2 className="text-3xl font-bold text-white">Ahoj, som Stano</h2>
                 <p className="text-gray-300 leading-relaxed">
-                  Som 19-ročný nadšenec pre technológie zo Žiliny. K počítačom som mal blízko odmalička, no zlom nastal v mojich 15 rokoch, kedy som napísal svoje prvé riadky kódu. Odvtedy sa neustále vzdelávam a pretransformoval som svoju vášeň do profesionálnych riešení. Dnes pomáham firmám naplno využiť potenciál webu, spravovať sociálne siete a tvoriť digitálnu identitu, ktorá má zmysel.
+                  Som 19-ročný nadšenec pre technológie zo Žiliny. K počítačom som mal blízko odmalička, no zlom nastal v mojich 15 rokoch, kedy som napísal svoje prvé riadky kódu. Odvtedy sa neustále vzdelávam a pretransformoval som svoju vášeň do profesionálnych riešení. Dnes pomáham firmám naplno využiť potenciál webu, spravovať sociálne siete a tvoriť digitálnu identitu, pre zvyšenie počtu potenciálnych zakaznikov.
                 </p>
               </div>
             </div>
