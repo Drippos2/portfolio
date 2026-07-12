@@ -5,22 +5,22 @@ const About = ({ translations }) => {
   const [count, setCount] = useState(0);
   const sectionRef = useRef(null);
 
-  // Táto časť zabezpečí, že sa animácia spustí až keď uvidíš túto sekciu
+  // Animácia počítadla nastavená na 5 sekúnd
   useEffect(() => {
     if (isVisible) {
       let start = 0;
-      const end = 4;
-      const duration = 1500; // 1.5 sekundy
-      const stepTime = Math.abs(Math.floor(duration / end));
+      const end = 4; // Tvoje cieľové číslo
+      const duration = 5000; // 5000ms = 5 sekúnd
+      const stepTime = Math.floor(duration / end);
       
       const timer = setInterval(() => {
         start += 1;
         setCount(start);
-        if (start === end) clearInterval(timer);
+        if (start >= end) clearInterval(timer);
       }, stepTime);
       return () => clearInterval(timer);
     }
-  }, [isVisible]); // Spustí sa len vtedy, keď sa isVisible zmení na true
+  }, [isVisible]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,7 +29,7 @@ const About = ({ translations }) => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 } // 30% sekcie musí byť viditeľných, kým sa animácia spustí
+      { threshold: 0.3 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => { if (sectionRef.current) observer.unobserve(sectionRef.current); };
@@ -38,7 +38,6 @@ const About = ({ translations }) => {
   return (
     <section id="about" className="py-20 bg-background" ref={sectionRef}>
       <div className="container mx-auto px-4">
-        {/* Kontajner animovaný pri vstupe */}
         <div className={`max-w-4xl mx-auto transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
@@ -69,7 +68,6 @@ const About = ({ translations }) => {
               <div className="text-xs font-bold text-gray-400 tracking-widest uppercase">PRVÝ NÁVRH</div>
             </div>
             
-            {/* Počítadlo sa spustí až keď je sekcia viditeľná */}
             <div className="bg-[#1a1a1a] border border-[#333] p-6 rounded-xl text-center">
               <div className="text-3xl font-black text-[#FFD700] mb-1">{count}+</div>
               <div className="text-xs font-bold text-gray-400 tracking-widest uppercase">ÚSPEŠNÝCH PROJEKTOV</div>
