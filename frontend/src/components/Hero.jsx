@@ -27,7 +27,16 @@ const Hero = ({ translations }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => { if (!loading) setIsVisible(true); }, [loading]);
-  const scrollToSection = (id) => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth' }); };
+  
+  // Tu je funkcia, ktorá ťa presunie. Hľadá presné 'id'
+  const scrollToSection = (id) => { 
+    const el = document.getElementById(id); 
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth' }); 
+    } else {
+        console.warn(`Sekcia s id="${id}" nebola nájdená. Skontroluj, či ju máš v danom komponente nastavenú ako id="${id}".`);
+    }
+  };
 
   if (loading) return <Preloader onLoadingComplete={() => setLoading(false)} />;
 
@@ -47,14 +56,12 @@ const Hero = ({ translations }) => {
             {translations.hero.title}
           </p>
 
-          {/* UPRAVENÝ GRID TLAČIDIEL */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
-            {/* HLAVNÉ CTA - DOMINANTNÉ */}
+            
             <Button onClick={() => scrollToSection('projects')} className="bg-gradient-to-r from-[#FFD700] to-[#FF8C00] text-black font-bold h-14 hover:scale-105 transition-all shadow-[0_0_25px_rgba(255,140,0,0.5)] border-none">
               Pozrieť projekty <ArrowRight className="ml-2" size={18} />
             </Button>
             
-            {/* SEKUNDÁRNE TLAČIDLÁ - ZOSVETLENÉ A VÝRAZNEJŠIE */}
             <Button variant="outline" onClick={() => scrollToSection('about')} className="border-white/30 hover:border-[#FFD700] text-white hover:text-[#FFD700] h-14 bg-white/5 hover:bg-white/10 transition-all">
               <Users className="mr-2" size={18} /> O nás
             </Button>
