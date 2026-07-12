@@ -5,12 +5,12 @@ const About = ({ translations }) => {
   const [count, setCount] = useState(0);
   const sectionRef = useRef(null);
 
-  // Animácia počítadla
+  // Táto časť zabezpečí, že sa animácia spustí až keď uvidíš túto sekciu
   useEffect(() => {
     if (isVisible) {
       let start = 0;
-      const end = 4; // Tvoje číslo projektov
-      const duration = 2000; // 2 sekundy animácia
+      const end = 4;
+      const duration = 1500; // 1.5 sekundy
       const stepTime = Math.abs(Math.floor(duration / end));
       
       const timer = setInterval(() => {
@@ -20,12 +20,16 @@ const About = ({ translations }) => {
       }, stepTime);
       return () => clearInterval(timer);
     }
-  }, [isVisible]);
+  }, [isVisible]); // Spustí sa len vtedy, keď sa isVisible zmení na true
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
-      { threshold: 0.2 }
+      ([entry]) => { 
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 } // 30% sekcie musí byť viditeľných, kým sa animácia spustí
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => { if (sectionRef.current) observer.unobserve(sectionRef.current); };
@@ -34,7 +38,7 @@ const About = ({ translations }) => {
   return (
     <section id="about" className="py-20 bg-background" ref={sectionRef}>
       <div className="container mx-auto px-4">
-        {/* Animácia celého bloku */}
+        {/* Kontajner animovaný pri vstupe */}
         <div className={`max-w-4xl mx-auto transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
@@ -52,7 +56,7 @@ const About = ({ translations }) => {
               </div>
               <div className="w-full md:w-2/3 space-y-4 text-center md:text-left">
                 <h2 className="text-3xl font-bold text-white">Ahoj, som Stano</h2>
-                <p className="text-gray-300 leading-relaxed transition-opacity duration-1000 delay-300">
+                <p className="text-gray-300 leading-relaxed">
                   {translations.about.description}
                 </p>
               </div>
@@ -65,7 +69,7 @@ const About = ({ translations }) => {
               <div className="text-xs font-bold text-gray-400 tracking-widest uppercase">PRVÝ NÁVRH</div>
             </div>
             
-            {/* Animované počítadlo */}
+            {/* Počítadlo sa spustí až keď je sekcia viditeľná */}
             <div className="bg-[#1a1a1a] border border-[#333] p-6 rounded-xl text-center">
               <div className="text-3xl font-black text-[#FFD700] mb-1">{count}+</div>
               <div className="text-xs font-bold text-gray-400 tracking-widest uppercase">ÚSPEŠNÝCH PROJEKTOV</div>
