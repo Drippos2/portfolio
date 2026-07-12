@@ -71,13 +71,18 @@ const WhyMe = ({ translations }) => {
   return (
     <section id="why-me" className="py-20 bg-background" ref={sectionRef}>
       <div className="container mx-auto px-4">
-        {/* Glow efekt a skákajúce písmená */}
-        <h2 className="text-4xl font-bold mb-16 text-center flex justify-center drop-shadow-[0_0_10px_rgba(212,175,55,0.5)]" aria-level="2">
+        {/* Nadpis so šampiónovou zlatou farbou a skákajúcou animáciou */}
+        <h2 className="text-4xl font-bold mb-16 text-center flex justify-center" aria-level="2">
           {titleText.split("").map((char, index) => (
             <span 
               key={index} 
-              className="inline-block animate-bounce bg-gradient-to-r from-white via-yellow-200 to-yellow-500 bg-clip-text text-transparent"
-              style={{ animationDelay: `${index * 0.1}s`, animationDuration: '2s' }}
+              className="inline-block animate-bounce"
+              style={{ 
+                animationDelay: `${index * 0.1}s`, 
+                animationDuration: '2s',
+                color: '#D4AF37',
+                textShadow: '0 0 15px rgba(212, 175, 55, 0.6)'
+              }}
             >
               {char === " " ? "\u00A0" : char}
             </span>
