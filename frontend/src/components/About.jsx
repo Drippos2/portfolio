@@ -2,23 +2,41 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const About = ({ translations }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [count, setCount] = useState(0);
+  const [projectCount, setProjectCount] = useState(0);
+  const [billingPercent, setBillingPercent] = useState(0);
   const sectionRef = useRef(null);
 
-  // Animácia počítadla nastavená na 5 sekúnd
+  // Animácia oboch počítadiel nastavená na 5 sekúnd
   useEffect(() => {
     if (isVisible) {
-      let start = 0;
-      const end = 4; // Tvoje cieľové číslo
-      const duration = 5000; // 5000ms = 5 sekúnd
-      const stepTime = Math.floor(duration / end);
+      const duration = 5000; // 5 sekúnd
       
-      const timer = setInterval(() => {
-        start += 1;
-        setCount(start);
-        if (start >= end) clearInterval(timer);
-      }, stepTime);
-      return () => clearInterval(timer);
+      // Počítadlo projektov (0 -> 4)
+      const projectEnd = 4;
+      const projectStepTime = Math.floor(duration / projectEnd);
+      const projectTimer = setInterval(() => {
+        setProjectCount((prev) => {
+          if (prev < projectEnd) return prev + 1;
+          clearInterval(projectTimer);
+          return prev;
+        });
+      }, projectStepTime);
+
+      // Počítadlo fakturácie (0 -> 100)
+      const billingEnd = 100;
+      const billingStepTime = Math.floor(duration / billingEnd);
+      const billingTimer = setInterval(() => {
+        setBillingPercent((prev) => {
+          if (prev < billingEnd) return prev + 1;
+          clearInterval(billingTimer);
+          return prev;
+        });
+      }, billingStepTime);
+
+      return () => {
+        clearInterval(projectTimer);
+        clearInterval(billingTimer);
+      };
     }
   }, [isVisible]);
 
@@ -69,12 +87,12 @@ const About = ({ translations }) => {
             </div>
             
             <div className="bg-[#1a1a1a] border border-[#333] p-6 rounded-xl text-center">
-              <div className="text-3xl font-black text-[#FFD700] mb-1">{count}+</div>
+              <div className="text-3xl font-black text-[#FFD700] mb-1">{projectCount}+</div>
               <div className="text-xs font-bold text-gray-400 tracking-widest uppercase">ÚSPEŠNÝCH PROJEKTOV</div>
             </div>
 
             <div className="bg-[#1a1a1a] border border-[#333] p-6 rounded-xl text-center">
-              <div className="text-3xl font-black text-[#FFD700] mb-1">100%</div>
+              <div className="text-3xl font-black text-[#FFD700] mb-1">{billingPercent}%</div>
               <div className="text-xs font-bold text-gray-400 tracking-widest uppercase">OFICIÁLNA FAKTURÁCIA</div>
             </div>
           </div>
